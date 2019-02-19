@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-nodejs-server" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-请求-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/19/nodejs-server/" class="article-date">
-  <time datetime="2019-02-19T11:26:52.000Z" itemprop="datePublished">2019-02-19</time>
+    <a href="/2019/02/19/请求-3/" class="article-date">
+  <time datetime="2019-02-19T11:42:08.000Z" itemprop="datePublished">2019-02-19</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/nodejs-server/">nodejs-server</a>
+      <a class="article-title" href="/2019/02/19/请求-3/">请求</a>
     </h1>
   
 
@@ -84,57 +84,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HTTP的底层是由TCP和IP协议构成的</p>
-<h2 id="TCP传输协议控制-Transmission-Control-Protocol"><a href="#TCP传输协议控制-Transmission-Control-Protocol" class="headerlink" title="TCP传输协议控制(Transmission Control Protocol)"></a>TCP传输协议控制(Transmission Control Protocol)</h2><p>面试的时候最多问两个问题，看博客了解一下即可。</p>
-<ul>
-<li><p>TCP和UDP的区别？</p>
-<p>简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。</p>
+        <h2 id="在说请求响应之前写一下相关的知识点"><a href="#在说请求响应之前写一下相关的知识点" class="headerlink" title="在说请求响应之前写一下相关的知识点"></a>在说请求响应之前写一下相关的知识点</h2><h2 id="URI-URL-URN"><a href="#URI-URL-URN" class="headerlink" title="URI URL URN"></a>URI URL URN</h2><h3 id="URI分为URL和URN"><a href="#URI分为URL和URN" class="headerlink" title="URI分为URL和URN"></a>URI分为URL和URN</h3><p>URL其实就是我们说的网址，每次搜索都能发现输入框内有一串东东，就是URL。</p>
+<p><img src="https://i.loli.net/2019/02/18/5c6a5f06929c4.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
+<p>http是协议，作用是指导浏览器和服务器如何进行沟通。锚点：当我搜索hello会出现很多条东西在页面上#5就是第五条。看图。注意红色标记。#5是手动加上演示用的。</p>
+<p><img src="https://i.loli.net/2019/02/18/5c6a682300e3e.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
+<p>URN就是一串字符，比如ISBN: 9787115275790 对应的资源的是《JavaScript 高级程序设计（第三版）》这本书，每个书是不一样的，通过这个就能找到对应的书。也就是确定一个唯一的资源。</p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>DNS就是域名系统。</p>
+<p>通俗解释下：当我访问baidu.com的时候，我问DNS它对应的IP是啥。输入域名得到IP，我才能去访问它。</p>
+<h1 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h1><h3 id="请求步骤"><a href="#请求步骤" class="headerlink" title="请求步骤"></a>请求步骤</h3><ul>
+<li><p>浏览器负责发出请求</p>
 </li>
-<li>TCP 的三次握手指的是什么<br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：<ol>
-<li>客户端：我要连接你了，可以吗</li>
-<li>服务端：嗯，我准备好了，连接我吧</li>
-<li>客户端：那我连接你咯。</li>
-<li>开始后面步骤<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2>有一些琐碎的知识点:</li>
-</ol>
+<li><p>服务器在80端口接收请求</p>
 </li>
-</ul>
-<p>1.IP分为内网外网，中间人是路由器，你的设备，像电脑手机和路由器过程的是内网。如果想连接外网是需要路由器中转的。</p>
-<p>2.访问127.0.0.1是访问自己(设备)</p>
-<p>3.内网IP格式：192.168.xx.xx</p>
-<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>访问设备只有IP是不行的，还需要有端口，端口是什么，其实只是一个编号。</p>
-<h3 id="一个端口只对应一个服务"><a href="#一个端口只对应一个服务" class="headerlink" title="一个端口只对应一个服务"></a>一个端口只对应一个服务</h3><p>1.要提供 HTTP 服务你最好使用 80 端口</p>
-<p>2.要提供 HTTPS 服务你最好使用 443 端口</p>
-<p>3.要提供 FTP 服务你最好使用 21 端口</p>
-<ul>
-<li><p>不知道用什么端口号可以<a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a></p>
+<li><p>服务器负责响应</p>
 </li>
-<li><p>一共有多少端口号：65535 0~1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</p>
+<li><p>浏览器负责下载响应内容</p>
 </li>
 </ul>
-<h1 id="用server接收请求"><a href="#用server接收请求" class="headerlink" title="用server接收请求"></a>用server接收请求</h1><p>简述步骤：</p>
-<ul>
-<li>cd ~/Desktop</li>
-<li>mkdir node-demo</li>
-<li>cd node-demo</li>
-<li>touch server.js</li>
-<li>编辑server.js （<a href="https://github.com/pingdeng123/note-server/blob/master/server.js" target="_blank" rel="noopener">编辑内容在此</a>）运行 node server.js;</li>
+<h3 id="请求格式"><a href="#请求格式" class="headerlink" title="请求格式"></a>请求格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure>
+<h5 id="对照下面几条看"><a href="#对照下面几条看" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 POST / HTTP/1.1</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">2 4Accept: */*</span><br><span class="line">2 Frank: xxx</span><br><span class="line">2 Content-Length: 10</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">3</span><br><span class="line">4 1234567890</span><br></pre></td></tr></table></figure>
+<p>解释一下：<strong>第一部分</strong>动词就是GET，POST，PUT，PATCH，PUT就是需要更改全部的请求，PATCH是更改部分请求。路径就是/，如果不写默认是/。协议就是HTTP或者HTTPS。版本号这里是1.1。 <strong>第二部分</strong>全部是k:value的格式。<strong>第三部分</strong>是空白。<strong>第四部分</strong>是要上传的数据。</p>
+<h4 id="补充：请求可以用GET-POST还可以POST-d-数据"><a href="#补充：请求可以用GET-POST还可以POST-d-数据" class="headerlink" title="补充：请求可以用GET POST还可以POST -d(数据)"></a>补充：请求可以用GET POST还可以POST -d(数据)</h4><h1 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h1><h3 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure>
+<h5 id="对照下面几条看-1"><a href="#对照下面几条看-1" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 302 Found</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Length: 17931</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Date: Tue, 10 Oct 2017 09:19:47 GMT</span><br><span class="line">Etag: &quot;54d9749e-460b&quot;</span><br><span class="line">Server: bfe/1.0.8.18</span><br></pre></td></tr></table></figure>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><h5 id="服务器对浏览器说的话"><a href="#服务器对浏览器说的话" class="headerlink" title="服务器对浏览器说的话"></a>服务器对浏览器说的话</h5><ul>
+<li>1xx 不常用</li>
+<li>2xx 表示成功 200成功 204表示创建成功 </li>
+<li>3xx 滚吧 301 表示永久不存在了 302表示赞赏不存在 304(你请求内容，服务器响应的数据内容和上次一样，让你还使用上次的)</li>
+<li>4xx 你(浏览器)错了</li>
+<li>5xx 我(服务器)错了</li>
 </ul>
-<p>(里面内容是大神写的，只是借来写个笔记，三扣)</p>
-<h1 id="用server发送响应"><a href="#用server发送响应" class="headerlink" title="用server发送响应"></a>用server发送响应</h1><ul>
-<li>成功之后新开个bash窗口</li>
-<li>编辑sever.js</li>
-<li><p>在标注的地方添加代码<br>response.write(‘hi’)和response.end()</p>
-</li>
-<li><p>中断之前的 server，重新运行 node server 8888</p>
-</li>
-<li><a href="http://127.0.0.1:8888/xxx" target="_blank" rel="noopener">http://127.0.0.1:8888/xxx</a> 打开这个网页就会看到hi</li>
-</ul>
-<p>那两行代码根据英文意思大概也能知道，第一个是写入hi，第二个是结束。和可以加上这些response.statusCode = 200 意思是状态码，200代表成功 response.setHeader(‘Content-Type’, ‘text/html;charset=utf-8’) 这个意思是把得到的内容转成html格式，utf-8就是GBK，这个在之前博客有写。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/nodejs-server/" data-id="cjsbosq5h000128v74hr8ufxr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/请求-3/" data-id="cjsbp9g470008mov74z4rf1kf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,10 +127,65 @@
 
 
   
-    <article id="post-请求响应-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-resnote" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/19/请求响应-1/" class="article-date">
-  <time datetime="2019-02-19T11:19:52.000Z" itemprop="datePublished">2019-02-19</time>
+    <a href="/2019/02/19/resnote/" class="article-date">
+  <time datetime="2019-02-19T11:41:13.532Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="在说请求响应之前写一下相关的知识点"><a href="#在说请求响应之前写一下相关的知识点" class="headerlink" title="在说请求响应之前写一下相关的知识点"></a>在说请求响应之前写一下相关的知识点</h2><h2 id="URI-URL-URN"><a href="#URI-URL-URN" class="headerlink" title="URI URL URN"></a>URI URL URN</h2><h3 id="URI分为URL和URN"><a href="#URI分为URL和URN" class="headerlink" title="URI分为URL和URN"></a>URI分为URL和URN</h3><p>URL其实就是我们说的网址，每次搜索都能发现输入框内有一串东东，就是URL。</p>
+<p><img src="https://i.loli.net/2019/02/18/5c6a5f06929c4.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
+<p>http是协议，作用是指导浏览器和服务器如何进行沟通。锚点：当我搜索hello会出现很多条东西在页面上#5就是第五条。看图。注意红色标记。#5是手动加上演示用的。</p>
+<p><img src="https://i.loli.net/2019/02/18/5c6a682300e3e.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
+<p>URN就是一串字符，比如ISBN: 9787115275790 对应的资源的是《JavaScript 高级程序设计（第三版）》这本书，每个书是不一样的，通过这个就能找到对应的书。也就是确定一个唯一的资源。</p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>DNS就是域名系统。</p>
+<p>通俗解释下：当我访问baidu.com的时候，我问DNS它对应的IP是啥。输入域名得到IP，我才能去访问它。</p>
+<h1 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h1><h3 id="请求步骤"><a href="#请求步骤" class="headerlink" title="请求步骤"></a>请求步骤</h3><ul>
+<li><p>浏览器负责发出请求</p>
+</li>
+<li><p>服务器在80端口接收请求</p>
+</li>
+<li><p>服务器负责响应</p>
+</li>
+<li><p>浏览器负责下载响应内容</p>
+</li>
+</ul>
+<h3 id="请求格式"><a href="#请求格式" class="headerlink" title="请求格式"></a>请求格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure>
+<h5 id="对照下面几条看"><a href="#对照下面几条看" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 POST / HTTP/1.1</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">2 4Accept: */*</span><br><span class="line">2 Frank: xxx</span><br><span class="line">2 Content-Length: 10</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">3</span><br><span class="line">4 1234567890</span><br></pre></td></tr></table></figure>
+<p>解释一下：<strong>第一部分</strong>动词就是GET，POST，PUT，PATCH，PUT就是需要更改全部的请求，PATCH是更改部分请求。路径就是/，如果不写默认是/。协议就是HTTP或者HTTPS。版本号这里是1.1。 <strong>第二部分</strong>全部是k:value的格式。<strong>第三部分</strong>是空白。<strong>第四部分</strong>是要上传的数据。</p>
+<h4 id="补充：请求可以用GET-POST还可以POST-d-数据"><a href="#补充：请求可以用GET-POST还可以POST-d-数据" class="headerlink" title="补充：请求可以用GET POST还可以POST -d(数据)"></a>补充：请求可以用GET POST还可以POST -d(数据)</h4><h1 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h1><h3 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure>
+<h5 id="对照下面几条看-1"><a href="#对照下面几条看-1" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 302 Found</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Length: 17931</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Date: Tue, 10 Oct 2017 09:19:47 GMT</span><br><span class="line">Etag: &quot;54d9749e-460b&quot;</span><br><span class="line">Server: bfe/1.0.8.18</span><br></pre></td></tr></table></figure>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><h5 id="服务器对浏览器说的话"><a href="#服务器对浏览器说的话" class="headerlink" title="服务器对浏览器说的话"></a>服务器对浏览器说的话</h5><ul>
+<li>1xx 不常用</li>
+<li>2xx 表示成功 200成功 204表示创建成功 </li>
+<li>3xx 滚吧 301 表示永久不存在了 302表示赞赏不存在 304(你请求内容，服务器响应的数据内容和上次一样，让你还使用上次的)</li>
+<li>4xx 你(浏览器)错了</li>
+<li>5xx 我(服务器)错了</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/19/resnote/" data-id="cjsbp9g3k0001mov7n77gvrcd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-请求-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/19/请求-2/" class="article-date">
+  <time datetime="2019-02-19T11:36:43.000Z" itemprop="datePublished">2019-02-19</time>
 </a>
     
   </div>
@@ -158,7 +196,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/19/请求响应-1/">请求响应</a>
+      <a class="article-title" href="/2019/02/19/请求-2/">请求</a>
     </h1>
   
 
@@ -170,7 +208,79 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/请求响应-1/" data-id="cjsbosq61000528v74cspeaf2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/请求-2/" data-id="cjsbp9g3s0006mov7oddem5ql" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-请求-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/19/请求-1/" class="article-date">
+  <time datetime="2019-02-19T11:36:40.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/19/请求-1/">请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/19/请求-1/" data-id="cjsbp9g3r0005mov7hiny949x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/19/请求/" class="article-date">
+  <time datetime="2019-02-19T11:36:21.000Z" itemprop="datePublished">2019-02-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/19/请求/">请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/19/请求/" data-id="cjsbp9g450007mov7foioclpk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/脚本/" data-id="cjsbosq5n000428v74dyoiyna" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/脚本/" data-id="cjsbp9g3o0003mov7ux9uk3h2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/命令行/" data-id="cjsbosq5k000228v7uzj69sls" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/命令行/" data-id="cjsbp9g3m0002mov7tt1b56za" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/开博大吉/" data-id="cjsbosq5m000328v7ee7j1jrx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/开博大吉/" data-id="cjsbp9g3p0004mov7g2zs5we2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -364,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/19/hello-world/" data-id="cjsbosq5b000028v7k7b8y8di" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/19/hello-world/" data-id="cjsbp9g3e0000mov7opxcmk8z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,23 +515,23 @@
       <ul>
         
           <li>
-            <a href="/2019/02/19/nodejs-server/">nodejs-server</a>
+            <a href="/2019/02/19/请求-3/">请求</a>
           </li>
         
           <li>
-            <a href="/2019/02/19/请求响应-1/">请求响应</a>
+            <a href="/2019/02/19/resnote/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/02/19/脚本/">脚本</a>
+            <a href="/2019/02/19/请求-2/">请求</a>
           </li>
         
           <li>
-            <a href="/2019/02/19/命令行/">命令行</a>
+            <a href="/2019/02/19/请求-1/">请求</a>
           </li>
         
           <li>
-            <a href="/2019/02/19/开博大吉/">开博大吉</a>
+            <a href="/2019/02/19/请求/">请求</a>
           </li>
         
       </ul>
