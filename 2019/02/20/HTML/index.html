@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="HTTP的底层是由TCP和IP协议构成的 TCP传输协议控制(Transmission Control Protocol)面试的时候最多问两个问题，看博客了解一下即可。  TCP和UDP的区别？ 简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内">
+<meta name="description" content="HTML (Hyper Text Markup Language) 超文本标记语言HTML的版本HTML 4.01XHTMLHTML 5(现在使用5)HTML 5.1XHTML HTML使用格式是这样的12345&amp;lt;!DOCTYPE html&amp;gt; DOCTYPE必须大写，&amp;lt;html&amp;gt; html开头标签&amp;lt;head&amp;gt;头&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js-Server">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/Node-js-Server/index.html">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://yoursite.com/2019/02/20/HTML/index.html">
 <meta property="og:site_name" content="Wine">
-<meta property="og:description" content="HTTP的底层是由TCP和IP协议构成的 TCP传输协议控制(Transmission Control Protocol)面试的时候最多问两个问题，看博客了解一下即可。  TCP和UDP的区别？ 简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内">
+<meta property="og:description" content="HTML (Hyper Text Markup Language) 超文本标记语言HTML的版本HTML 4.01XHTMLHTML 5(现在使用5)HTML 5.1XHTML HTML使用格式是这样的12345&amp;lt;!DOCTYPE html&amp;gt; DOCTYPE必须大写，&amp;lt;html&amp;gt; html开头标签&amp;lt;head&amp;gt;头&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-19T12:04:38.301Z">
+<meta property="og:image" content="https://i.loli.net/2019/02/20/5c6d5544a6ad4.png">
+<meta property="og:updated_time" content="2019-02-20T14:50:37.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js-Server">
-<meta name="twitter:description" content="HTTP的底层是由TCP和IP协议构成的 TCP传输协议控制(Transmission Control Protocol)面试的时候最多问两个问题，看博客了解一下即可。  TCP和UDP的区别？ 简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内">
+<meta name="twitter:title" content="HTML">
+<meta name="twitter:description" content="HTML (Hyper Text Markup Language) 超文本标记语言HTML的版本HTML 4.01XHTMLHTML 5(现在使用5)HTML 5.1XHTML HTML使用格式是这样的12345&amp;lt;!DOCTYPE html&amp;gt; DOCTYPE必须大写，&amp;lt;html&amp;gt; html开头标签&amp;lt;head&amp;gt;头&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;">
+<meta name="twitter:image" content="https://i.loli.net/2019/02/20/5c6d5544a6ad4.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/Node-js-Server/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/20/HTML/">
 
 
 
 
 
-  <title>Node.js-Server | Wine</title>
+  <title>HTML | Wine</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Node-js-Server/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WineWang0000">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Node.js-Server</h1>
+          <h1 class="post-title" itemprop="name headline">HTML</h1>
         
 
         <div class="post-meta">
@@ -261,8 +263,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T20:03:48+08:00">
-                2019-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T14:08:16+08:00">
+                2019-02-20
               </time>
             
 
@@ -299,52 +301,13 @@
       
 
       
-        <p>HTTP的底层是由TCP和IP协议构成的</p>
-<h2 id="TCP传输协议控制-Transmission-Control-Protocol"><a href="#TCP传输协议控制-Transmission-Control-Protocol" class="headerlink" title="TCP传输协议控制(Transmission Control Protocol)"></a>TCP传输协议控制(Transmission Control Protocol)</h2><p>面试的时候最多问两个问题，看博客了解一下即可。</p>
-<ul>
-<li><p>TCP和UDP的区别？</p>
-<p>简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。</p>
-</li>
-<li>TCP 的三次握手指的是什么<br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：<ol>
-<li>客户端：我要连接你了，可以吗</li>
-<li>服务端：嗯，我准备好了，连接我吧</li>
-<li>客户端：那我连接你咯。</li>
-<li>开始后面步骤<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2>有一些琐碎的知识点:</li>
-</ol>
-</li>
-</ul>
-<p>1.IP分为内网外网，中间人是路由器，你的设备，像电脑手机和路由器过程的是内网。如果想连接外网是需要路由器中转的。</p>
-<p>2.访问127.0.0.1是访问自己(设备)</p>
-<p>3.内网IP格式：192.168.xx.xx</p>
-<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>访问设备只有IP是不行的，还需要有端口，端口是什么，其实只是一个编号。</p>
-<h3 id="一个端口只对应一个服务"><a href="#一个端口只对应一个服务" class="headerlink" title="一个端口只对应一个服务"></a>一个端口只对应一个服务</h3><p>1.要提供 HTTP 服务你最好使用 80 端口</p>
-<p>2.要提供 HTTPS 服务你最好使用 443 端口</p>
-<p>3.要提供 FTP 服务你最好使用 21 端口</p>
-<ul>
-<li><p>不知道用什么端口号可以<a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a></p>
-</li>
-<li><p>一共有多少端口号：65535 0~1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</p>
-</li>
-</ul>
-<h1 id="用server接收请求"><a href="#用server接收请求" class="headerlink" title="用server接收请求"></a>用server接收请求</h1><p>简述步骤：</p>
-<ul>
-<li>cd ~/Desktop</li>
-<li>mkdir node-demo</li>
-<li>cd node-demo</li>
-<li>touch server.js</li>
-<li>编辑server.js （<a href="https://github.com/pingdeng123/note-server/blob/master/server.js" target="_blank" rel="noopener">编辑内容在此</a>）运行 node server.js;</li>
-</ul>
-<p>(里面内容是大神写的，只是借来写个笔记，三扣)</p>
-<h1 id="用server发送响应"><a href="#用server发送响应" class="headerlink" title="用server发送响应"></a>用server发送响应</h1><ul>
-<li>成功之后新开个bash窗口</li>
-<li>编辑sever.js</li>
-<li><p>在标注的地方添加代码<br>response.write(‘hi’)和response.end()</p>
-</li>
-<li><p>中断之前的 server，重新运行 node server 8888</p>
-</li>
-<li><a href="http://127.0.0.1:8888/xxx" target="_blank" rel="noopener">http://127.0.0.1:8888/xxx</a> 打开这个网页就会看到hi</li>
-</ul>
-<p>那两行代码根据英文意思大概也能知道，第一个是写入hi，第二个是结束。和可以加上这些response.statusCode = 200 意思是状态码，200代表成功 response.setHeader(‘Content-Type’, ‘text/html;charset=utf-8’) 这个意思是把得到的内容转成html格式，utf-8就是GBK，这个在之前博客有写。</p>
+        <h2 id="HTML-Hyper-Text-Markup-Language-超文本标记语言"><a href="#HTML-Hyper-Text-Markup-Language-超文本标记语言" class="headerlink" title="HTML (Hyper Text Markup Language) 超文本标记语言"></a>HTML (Hyper Text Markup Language) 超文本标记语言</h2><h2 id="HTML的版本"><a href="#HTML的版本" class="headerlink" title="HTML的版本"></a>HTML的版本</h2><p>HTML 4.01<br>XHTML<br>HTML 5(现在使用5)<br>HTML 5.1<br>XHTML</p>
+<h3 id="HTML使用"><a href="#HTML使用" class="headerlink" title="HTML使用"></a>HTML使用</h3><p>格式是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; DOCTYPE必须大写，</span><br><span class="line">&lt;html&gt; html开头标签</span><br><span class="line">&lt;head&gt;头&lt;/head&gt; </span><br><span class="line">&lt;body&gt;身体&lt;/body&gt; 身体内可以写内容</span><br><span class="line">&lt;/html&gt; /的是html的闭合标签，基本每个标签都有开头和闭合，一些特殊的除外。</span><br></pre></td></tr></table></figure></p>
+<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a 标签定义超链接，用于从一张页面链接到另一张页面。</span><br><span class="line">form 为用户创建HTML表单</span><br><span class="line">input 提交</span><br><span class="line">button 按钮</span><br><span class="line">h1到h6 定义标题，(h1到h6字体大小粗细不一)</span><br><span class="line">p 表示段落</span><br><span class="line">ul 无序列表</span><br><span class="line">ol 有序列表</span><br><span class="line">small 与strong相反</span><br><span class="line">strong 加重</span><br><span class="line">div divide缩写，和span一样分区域</span><br><span class="line">span span和div没有默认样式</span><br><span class="line">kbd keyboard键盘，定义键盘文本</span><br><span class="line">video 视频</span><br><span class="line">audio 音频</span><br><span class="line">svg 图标</span><br></pre></td></tr></table></figure>
+<p>标签有很多，其他的可查询<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>进行了解.</p>
+<h3 id="什么是空标签"><a href="#什么是空标签" class="headerlink" title="什么是空标签"></a>什么是空标签</h3><p>通俗说某个标签使用闭合标签是无效的，那它就是空标签。比如&lt;br&gt;强制换行的意思,它没有闭合标签&lt;/br&gt;它就是空标签。</p>
+<h3 id="什么是可替换元素"><a href="#什么是可替换元素" class="headerlink" title="什么是可替换元素"></a>什么是可替换元素</h3><p><strong>定义</strong>: 可替换元素（replaced element）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。<br>就比如img标签吧，一般情况是不是css设置它的宽高等，但是可以这样，在html设置它的宽高。不用css设置。如果再用css设置，css就会覆盖html设置的。常见的可替换元素有img，object，video等等<br><img src="https://i.loli.net/2019/02/20/5c6d5544a6ad4.png" alt="YZNRQ{AO}UT9}8~3V(%6JWC.png"></p>
+<p>小tip: &amp; l t ;是这个符号&lt; &amp; g t ;是这个符号&gt;这叫转义，有些符号等在文本中打不出来。自己试一下就知道了。</p>
 
       
     </div>
@@ -369,8 +332,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/19/HTTP请求/" rel="next" title="HTTP请求">
-                <i class="fa fa-chevron-left"></i> HTTP请求
+              <a href="/2019/02/19/Node-js-Server/" rel="next" title="Node.js-Server">
+                <i class="fa fa-chevron-left"></i> Node.js-Server
               </a>
             
           </div>
@@ -378,10 +341,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/20/HTML/" rel="prev" title="HTML">
-                HTML <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -495,7 +454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP传输协议控制-Transmission-Control-Protocol"><span class="nav-number">1.</span> <span class="nav-text">TCP传输协议控制(Transmission Control Protocol)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP"><span class="nav-number">2.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#端口"><span class="nav-number">3.</span> <span class="nav-text">端口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个端口只对应一个服务"><span class="nav-number">3.1.</span> <span class="nav-text">一个端口只对应一个服务</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#用server接收请求"><span class="nav-number"></span> <span class="nav-text">用server接收请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用server发送响应"><span class="nav-number"></span> <span class="nav-text">用server发送响应</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-Hyper-Text-Markup-Language-超文本标记语言"><span class="nav-number">1.</span> <span class="nav-text">HTML (Hyper Text Markup Language) 超文本标记语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML的版本"><span class="nav-number">2.</span> <span class="nav-text">HTML的版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML使用"><span class="nav-number">2.1.</span> <span class="nav-text">HTML使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用标签"><span class="nav-number">2.2.</span> <span class="nav-text">常用标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是空标签"><span class="nav-number">2.3.</span> <span class="nav-text">什么是空标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是可替换元素"><span class="nav-number">2.4.</span> <span class="nav-text">什么是可替换元素</span></a></li></ol></li></ol></div>
             
 
           </div>
