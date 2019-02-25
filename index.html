@@ -229,6 +229,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/CSS-Item/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/25/CSS-Item/" itemprop="url">CSS-Item</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T21:51:57+08:00">
+                2019-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS-Item内容解析"><a href="#CSS-Item内容解析" class="headerlink" title="CSS Item内容解析"></a>CSS Item内容解析</h2><p>就是用HTML和CSS写了个小东西，讲解一下部分重要的之前没有讲到的。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">a &#123;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">body &#123;</span><br><span class="line">  color: red; //父元素是红色</span><br><span class="line">&#125; </span><br><span class="line">a &#123;</span><br><span class="line">  color: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### 1.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><span>xxx</span><br><span>yyy</span> //xxx yyy<br><span>xxx</span><span>xxx</span> //xxxyyy<br>看到区别了吗？span的空格会在文本上展示出来，不想有空格span之间也不能有空格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">##### 2.</span><br><span class="line">```span标签```里最好```不要加div</span><br></pre></td></tr></table></figure></p>
+<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><figure class="highlight plain"><figcaption><span>?px ?px;```设置需要的宽高不需要写很复杂。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```div的高度```是由其内部```文档流```元素的高度总和决定</span><br><span class="line"></span><br><span class="line">- 什么是```文档流```-```文档内元素的流动方向```(通俗解释) </span><br><span class="line">举例</span><br></pre></td></tr></table></figure>
+<p><body><br>  <span>x</span> //内联元素<br>  <span>x</span><br>  <span>x</span><br>  <span>x</span><br>  <span>x</span><br>  <div>y</div>  //块级元素<br>  <div>y</div><br>  <div>y</div><br>  <div>y</div><br>  <div>y</div><br></body><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">看到没，```span```是```左右```流动，```div```是```上下```流动。所以说div的高度是由内容撑起来的，不需要设置宽高，否则会引起很多bug。</span><br><span class="line">![AHR(A)8HTVQ3WSPSP@TF&#123;XU.png](https://i.loli.net/2019/02/25/5c738b3581a1c.png)</span><br><span class="line"></span><br><span class="line">- 除了迫不得已情况下，```不要设置width和height```，否则会引起很多bug,(说两遍了)不信you可以try。</span><br><span class="line">- ```脱离文档流</span><br></pre></td></tr></table></figure></p>
+<p>后面会放项目的预览地址，拿这个例子中来说。添加过图片背景之后不能显示，why？因为块级元素高由文档流高度决定，所以我设置height：515px;使其撑开，但是导致图片没有在我需要的位置，所以需要我们脱离文档流，position: fiexd;脱离之后父亲body就管不了我了,但是又出现新问题了，之前设置的a标签浮动和Rscard并排了，这个时候设置width: 100%;但是你会发现上面九个a链接会超出父元素，肿么办，这么多问题，所以解决套路是在NAVBar里加个div.NavBar-inner，这样就OK了。<br>我知道我的叙述肯定只有我自己能看懂，所以我想说一般情况千万不要设置宽高啊。哭</p>
+<ul>
+<li><figure class="highlight plain"><figcaption><span>```自适应大小```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">逗是说比如```max-width: 300px;```最多不超过300，当你把屏幕缩小它还是挺正常的。如果用width，自己试一下就知道了。(唉，语文老师怕是要被我气屎了)</span><br><span class="line">- hello下面的```三角形```怎么写</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><head><meta name="generator" content="Hexo 3.8.0"><br>  <meta charset="utf-8"><br>  <title>Triangle</title><br>  <style><br>    div {<br>      border: 10px solid red;<br>      border-top-color: transparent; //透明<br>      border-bottom-color: transparent; //透明<br>      border-right-color: transparent; //透明<br>      border-top-width: 0px;<br>    }<br>  </style><br></head></p>
+<p><body><br>  <div></div><br></body><br><code>`</code><br><img src="https://i.loli.net/2019/02/25/5c739669b603b.png" alt></p>
+<ul>
+<li><code>vertical-align: top;</code> 垂直对齐一幅图像</li>
+</ul>
+<p><a href="http://192.168.3.9:8080/HTML%E5%AE%9E%E6%88%98/html.html" target="_blank" rel="noopener">Item预览</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/CSS Item解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1496,137 +1639,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/19/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T18:45:42+08:00">
-                2019-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1670,7 +1689,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
