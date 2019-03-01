@@ -229,6 +229,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/CSS布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/01/CSS布局/" itemprop="url">CSS布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-01T13:19:48+08:00">
+                2019-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h1><p>CSS页面布局技术允许我们拾取网页中的元素，并且控制它们相对正常布局流、周边元素、父容器或者主视口/窗口的位置。布局有很多种，每个布局技术各有不同。各有利弊。</p>
+<h3 id="一-正常布局"><a href="#一-正常布局" class="headerlink" title="一.正常布局"></a>一.正常布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">&lt;p&gt;My name is Wine&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>默认是这样布局的：</strong><br>My name is Wine</p>
+<ul>
+<li>1</li>
+<li>2<h3 id="二-Float-浮动"><a href="#二-Float-浮动" class="headerlink" title="二.Float 浮动"></a>二.Float 浮动</h3><h4 id="一般有这几种类型"><a href="#一般有这几种类型" class="headerlink" title="一般有这几种类型"></a>一般有这几种类型</h4>left：将元素浮动到左侧。<br>right：将元素浮动到右侧。<br>none：默认值, 不浮动。<br>inherit：继承父元素的浮动属性。</li>
+</ul>
+<h4 id="1-left举例："><a href="#1-left举例：" class="headerlink" title="1.left举例："></a>1.left举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line">&lt;ul class=&quot;clearfix&quot;&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt; </span><br><span class="line">CSS:</span><br><span class="line">ul &gt; li &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/03/01/5c78d6ff7d805.png" alt="图一"></p>
+<h4 id="2-right举例"><a href="#2-right举例" class="headerlink" title="2.right举例"></a>2.right举例</h4><p>和左浮相反，右浮，就不发图了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt; </span><br><span class="line">CSS:</span><br><span class="line">ul &gt; li &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="注意：用了浮动就要在父元素上"><a href="#注意：用了浮动就要在父元素上" class="headerlink" title="注意：用了浮动就要在父元素上"></a>注意：用了浮动就要在父元素上<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">### 三.定位</span><br><span class="line">##### 只讲解前面俩种</span><br><span class="line"></span><br><span class="line">相对定位：position: absolute;</span><br><span class="line">绝对定位：position: relative;</span><br><span class="line">静态定位：static，元素默认的，不用care</span><br><span class="line">固定定位：fixed</span><br><span class="line">##### 需要看代码来理解:</span><br><span class="line">##### 相对定位：</span><br></pre></td></tr></table></figure></h3><p>HTML:<br> </p><p class="parent">My name is Wine</p><br> <p>My name is Wine</p><br> <p>My name is Wine</p><p></p>
+<p> CSS:<br> p {<br>   background: red;<br>   padding: 10px;<br>   margin: 10px;<br> }<br> .parent {<br>   position: relative;<br>   background: yellow;<br>   left: 10px;<br> }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![](https://i.loli.net/2019/03/01/5c78e8190bc25.png)</span><br><span class="line"></span><br><span class="line">自己敲一遍就明白，第一个p相对于定位之前左边又加了10像素，所以第一个p向右移动。看字面意思就明白。相对是相对没有定位之前来看。</span><br><span class="line">##### 绝对定位：</span><br></pre></td></tr></table></figure></p>
+<p>上面例子改成absolute就行，减少字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![@$~P~WG9GZZ8O&#125;~)~OG%3H5.png](https://i.loli.net/2019/03/01/5c78e85122b01.png)</span><br><span class="line">不知道怎么叙述，所以复制了MDN的一段解释：定位元素现在已经与页面布局的其余部分完全分离，并位于页面的顶部。其他两段现在靠在一起，好像之前那个中间段落不存在一样。left属性对绝对位置元素的影响不同于相对位置元素。在这种情况下，他们没有指定元素相对于原始位置的移动程度。相反，它们指定元素应该从页面边界的顶部和左边的距离(确切地说，是 &amp;lt;html&amp;gt;元素的距离)。</span><br><span class="line">## 四.display: block; display: inline; display:inline-block;</span><br></pre></td></tr></table></figure></p>
+<p>HTML:</p>
+<p><br>   Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>   <span class="inline">Mauris tempus turpis id ante mollis dignissim.</span><br>   Nam sed dolor non tortor lacinia lobortis id dapibus nunc.<br></p>
+
+<p><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>  <span class="block">Mauris tempus turpis id ante mollis dignissim.</span><br>  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.<br></p>
+
+<p><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>  <span class="inline-block">Mauris tempus turpis id ante mollis dignissim.</span><br>  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.<br></p>
+
+<p>CSS:<br>p {<br>  padding: 1em;<br>  border: 1px solid black;<br>}<br>span {<br>  border  : 1px solid green;<br>  background-color: yellow;<br>}<br>.inline {<br>  display: inline;<br>}<br>.block  {<br>  display: block;<br>}<br>.inline-block {<br>  display: inline-block;<br>}<br><code>`</code><br><img src="https://i.loli.net/2019/03/01/5c78f2f5032e9.png" alt="N(`DW%WDMNS73XUNEDXA6I8.png"><br>这个例子是MDN的，侵删，看懂最重要。</p>
+<p>inline内联；block块；inline-block；行内块。翻译虽有些怪，inline可以和别人在同一行。block块级元素就是说我这段内容必须单独在一行，inline-block俩者兼备。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/ItemCode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1482,140 +1623,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/命令行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/19/命令行/" itemprop="url">命令行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T19:03:26+08:00">
-                2019-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Git命令行"><a href="#Git命令行" class="headerlink" title="Git命令行"></a>Git命令行</h2><h3 id="基本命令行（掘金第一篇文章，我们编辑是在git-bash进行滴。）"><a href="#基本命令行（掘金第一篇文章，我们编辑是在git-bash进行滴。）" class="headerlink" title="基本命令行（掘金第一篇文章，我们编辑是在git bash进行滴。）"></a>基本命令行（掘金第一篇文章，我们编辑是在git bash进行滴。）</h3><p>1.pwd是查看当前完整路径.这就是路径。</p>
-<p><img src="https://i.loli.net/2019/02/17/5c6964ff4f63d.png" alt="OVS5(XFTOES7A}QYX(L4N{A.png"></p>
-<p>2.ls:查看当前目录下文件，不包括隐藏文件.</p>
-<p>ls -a:查看当前目录下文件，包括隐藏文件.</p>
-<p>ls -al:查看当前目录下文件,包括隐藏文件的详细信息.</p>
-<h3 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h3><p>3.cd可以理解是进入的意思，进入文件。cd加空格加文件名字就会进入这文件.cd加空格加..(必须是英文状态下的点点)是返回上级文件夹的意思。cd加空格加.加目录名代表进入当前文件夹下某个目录，这个点就是当前文件夹的意思. cd /是根路径.cd ~/desktop是进入桌面.</p>
-<h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><p>4.touch book.md创建名为book的文件.mkdir加空格加文件夹名，这个是创建文件夹.</p>
-<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件."></a>删除文件.</h3><p>5.rm book .md是删除文件</p>
-<p>rm -rf book可以删除文件和文件夹，强制性的删除并且是不提示的哦!</p>
-<p>这些按照上面的在$符合后面接着写就行了，就是图片上那个黑框框里面一推字母的。</p>
-<h3 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h3><p>6.mv book.md Book.md就是重命名文件 mv其实就是move的缩写，把小写的book文件名重命名为大写book。</p>
-<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><p>接下来图看个图</p>
-<p><img src="https://i.loli.net/2019/02/17/5c6965e3c2dc8.png" alt="U8Y3G41$ZW5MUE50O(K3MT0.png"></p>
-<h3 id="咳咳，首先打开编辑器啊，然后呢输入vim-a-md-初始进入命令模式！再接着你会发现唉-怎么编辑不了呢？这个时候你只需要点个i-或者a-没错就是它，不需要任何符号就ok了-那就可以写你需要的代码了，写好之后按esc键进入命令模式。命令模式就在下面，注意红色圈出来的部分。写好需要的代码之后按：wq就是保存退出，如果按：q-就是不保存强制退出。"><a href="#咳咳，首先打开编辑器啊，然后呢输入vim-a-md-初始进入命令模式！再接着你会发现唉-怎么编辑不了呢？这个时候你只需要点个i-或者a-没错就是它，不需要任何符号就ok了-那就可以写你需要的代码了，写好之后按esc键进入命令模式。命令模式就在下面，注意红色圈出来的部分。写好需要的代码之后按：wq就是保存退出，如果按：q-就是不保存强制退出。" class="headerlink" title="咳咳，首先打开编辑器啊，然后呢输入vim a.md 初始进入命令模式！再接着你会发现唉 怎么编辑不了呢？这个时候你只需要点个i(或者a)没错就是它，不需要任何符号就ok了.那就可以写你需要的代码了，写好之后按esc键进入命令模式。命令模式就在下面，注意红色圈出来的部分。写好需要的代码之后按：wq就是保存退出，如果按：q!就是不保存强制退出。"></a>咳咳，首先打开编辑器啊，然后呢输入vim a.md 初始进入命令模式！再接着你会发现唉 怎么编辑不了呢？这个时候你只需要点个i(或者a)没错就是它，不需要任何符号就ok了.那就可以写你需要的代码了，写好之后按esc键进入命令模式。命令模式就在下面，注意红色圈出来的部分。写好需要的代码之后按：wq就是保存退出，如果按：q!就是不保存强制退出。</h3><p>唉 啰嗦</p>
-<p>今天学的内容就是这些了，以后不会的时候可以翻出来看看，如果有幸被其他的伙伴们看到了，噗呲，要是写的不对或者不好请指正哦! 菜鸟一枚。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1666,7 +1673,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
