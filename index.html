@@ -229,6 +229,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/CSS不正交/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/CSS不正交/" itemprop="url">CSS不正交</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T10:05:24+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS不正交"><a href="#CSS不正交" class="headerlink" title="CSS不正交"></a>CSS不正交</h2><p>为什么说css难学又好学呢，我觉得css也挺变态的。要想把css学好学透真难呐！下面说一下它“不正常”的地方。</p>
+<h3 id="1-border影响margin"><a href="#1-border影响margin" class="headerlink" title="1.border影响margin"></a>1.border影响margin</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line">&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先看这段代码，一个one的margin为10px，俩个之间是不是应该有20px，但为什么还是10px，那是因为margin合并了。再看下面一段代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看这个，是不是阻止margin合并，所以之间margin成了20px。让我们再看。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 0.1px solid;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<p>0.1px约等于是不是0，但是也阻止margin合并，这又是为什么呢，算了，记住这个变态就行了。还有display: flex/border也能阻止margin合并.</p>
+<h3 id="2-小圆点-比如ul默认的点"><a href="#2-小圆点-比如ul默认的点" class="headerlink" title="2.小圆点(比如ul默认的点)"></a>2.小圆点(比如ul默认的点)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">ul &gt;li &#123;</span><br><span class="line">  display: inline; //block也能清除圆点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-position影响display"><a href="#3-position影响display" class="headerlink" title="3.position影响display"></a>3.position影响display</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=&quot;one&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;two&quot;&gt;two&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> .one&#123;</span><br><span class="line">  border: 1px solid blue;</span><br><span class="line">  height: 100px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  display: inline;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里display样式是inline，但是打开后台(右击选检查能看到)就发现CSS已经改为block了，总结就是position能改变display-inline样式，目前发现只能改变inline，table，flex不会改变。不明白的时候最好自己试一下。或者死记硬背remember it。</p>
+<h3 id="4-父元素的transform影响fixed"><a href="#4-父元素的transform影响fixed" class="headerlink" title="4.父元素的transform影响fixed"></a>4.父元素的transform影响fixed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;two&quot;&gt;文字&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> </span><br><span class="line"> .one&#123;</span><br><span class="line">  background-color: red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  position: relative;</span><br><span class="line">  transform: scale(0.9);</span><br><span class="line"> &#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  position: fixed;</span><br><span class="line">  border: 1px solid yellow;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="注释之后："><a href="#注释之后：" class="headerlink" title="注释之后："></a>注释之后：</h4><p><img src="https://i.loli.net/2019/03/06/5c7f47c95c3b5.png" alt></p>
+<h4 id="注释之前："><a href="#注释之前：" class="headerlink" title="注释之前："></a>注释之前：</h4><p><img src="https://i.loli.net/2019/03/06/5c7f480f4c21a.png" alt="SUGSBE`H%ESB~7{X~L{99MQ.png"></p>
+<p>会被父元素任何一个transform影响</p>
+<h3 id="5-folat影响inline"><a href="#5-folat影响inline" class="headerlink" title="5.folat影响inline"></a>5.folat影响inline</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;two&quot;&gt;文字&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;three&quot;&gt;文字&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">.one&#123;</span><br><span class="line">  background-color: red;</span><br><span class="line">  height: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  background-color: black;</span><br><span class="line">  height: 50px;</span><br><span class="line">  width : 40px;</span><br><span class="line">  float: left;</span><br><span class="line">&#125;</span><br><span class="line">.three &#123;</span><br><span class="line">  background-color: yellow;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width : 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/03/06/5c7f443c1f729.png" alt><br>如图所示：黑色左浮，盖到黄色上面，影响到了黄色，按理说文字二字应在黑色下面，但事实却没有。原理我就不记了，记住这个“梗”</p>
+<h2 id="感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。"><a href="#感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。" class="headerlink" title="感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。"></a>感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/五种排序算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1454,154 +1587,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/HTTP请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/19/HTTP请求/" itemprop="url">HTTP请求</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T19:58:49+08:00">
-                2019-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="在说请求响应之前写一下相关的知识点"><a href="#在说请求响应之前写一下相关的知识点" class="headerlink" title="在说请求响应之前写一下相关的知识点"></a>在说请求响应之前写一下相关的知识点</h2><h2 id="URI-URL-URN"><a href="#URI-URL-URN" class="headerlink" title="URI URL URN"></a>URI URL URN</h2><h3 id="URI分为URL和URN"><a href="#URI分为URL和URN" class="headerlink" title="URI分为URL和URN"></a>URI分为URL和URN</h3><p>URL其实就是我们说的网址，每次搜索都能发现输入框内有一串东东，就是URL。</p>
-<p><img src="https://i.loli.net/2019/02/18/5c6a5f06929c4.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
-<p>http是协议，作用是指导浏览器和服务器如何进行沟通。锚点：当我搜索hello会出现很多条东西在页面上#5就是第五条。看图。注意红色标记。#5是手动加上演示用的。</p>
-<p><img src="https://i.loli.net/2019/02/18/5c6a682300e3e.png" alt="CGQ`]@0BBIUTS`GQM(0`LM1.png"></p>
-<p>URN就是一串字符，比如ISBN: 9787115275790 对应的资源的是《JavaScript 高级程序设计（第三版）》这本书，每个书是不一样的，通过这个就能找到对应的书。也就是确定一个唯一的资源。</p>
-<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>DNS就是域名系统。</p>
-<p>通俗解释下：当我访问baidu.com的时候，我问DNS它对应的IP是啥。输入域名得到IP，我才能去访问它。</p>
-<h1 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h1><h3 id="请求步骤"><a href="#请求步骤" class="headerlink" title="请求步骤"></a>请求步骤</h3><ul>
-<li><p>浏览器负责发出请求</p>
-</li>
-<li><p>服务器在80端口接收请求</p>
-</li>
-<li><p>服务器负责响应</p>
-</li>
-<li><p>浏览器负责下载响应内容</p>
-</li>
-</ul>
-<h3 id="请求格式"><a href="#请求格式" class="headerlink" title="请求格式"></a>请求格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure>
-<h5 id="对照下面几条看"><a href="#对照下面几条看" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 POST / HTTP/1.1</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">2 4Accept: */*</span><br><span class="line">2 Frank: xxx</span><br><span class="line">2 Content-Length: 10</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">3</span><br><span class="line">4 1234567890</span><br></pre></td></tr></table></figure>
-<p>解释一下：<strong>第一部分</strong>动词就是GET，POST，PUT，PATCH，PUT就是需要更改全部的请求，PATCH是更改部分请求。路径就是/，如果不写默认是/。协议就是HTTP或者HTTPS。版本号这里是1.1。 <strong>第二部分</strong>全部是k:value的格式。<strong>第三部分</strong>是空白。<strong>第四部分</strong>是要上传的数据。</p>
-<h4 id="补充：请求可以用GET-POST还可以POST-d-数据"><a href="#补充：请求可以用GET-POST还可以POST-d-数据" class="headerlink" title="补充：请求可以用GET POST还可以POST -d(数据)"></a>补充：请求可以用GET POST还可以POST -d(数据)</h4><h1 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h1><h3 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure>
-<h5 id="对照下面几条看-1"><a href="#对照下面几条看-1" class="headerlink" title="(对照下面几条看)"></a>(对照下面几条看)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 302 Found</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Length: 17931</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Date: Tue, 10 Oct 2017 09:19:47 GMT</span><br><span class="line">Etag: &quot;54d9749e-460b&quot;</span><br><span class="line">Server: bfe/1.0.8.18</span><br></pre></td></tr></table></figure>
-<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><h5 id="服务器对浏览器说的话"><a href="#服务器对浏览器说的话" class="headerlink" title="服务器对浏览器说的话"></a>服务器对浏览器说的话</h5><ul>
-<li>1xx 不常用</li>
-<li>2xx 表示成功 200成功 204表示创建成功 </li>
-<li>3xx 滚吧 301 表示永久不存在了 302表示赞赏不存在 304(你请求内容，服务器响应的数据内容和上次一样，让你还使用上次的)</li>
-<li>4xx 你(浏览器)错了</li>
-<li>5xx 我(服务器)错了</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1652,7 +1637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
