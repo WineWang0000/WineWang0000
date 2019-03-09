@@ -229,6 +229,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/Flex布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/09/Flex布局/" itemprop="url">Flex布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T18:56:52+08:00">
+                2019-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="flex之前用什么"><a href="#flex之前用什么" class="headerlink" title="flex之前用什么"></a>flex之前用什么</h2><ul>
+<li>position relative或者absolute</li>
+<li>float和clearfix</li>
+<li>负margin</li>
+<li>normal flow(正常流，又名文档流)</li>
+<li>display inline-block<h2 id="flex的作用："><a href="#flex的作用：" class="headerlink" title="flex的作用："></a>flex的作用：</h2></li>
+<li>块级布局注重垂直方向，行内侧重水平方向。但flex与方向无关。</li>
+<li>可实现空间自动分配，自动对齐。</li>
+<li>适用于简单的线性布局，复杂的使用gird布局。<h2 id="在父元素上加display：flex；"><a href="#在父元素上加display：flex；" class="headerlink" title="在父元素上加display：flex；"></a>在父元素上加display：flex；</h2><h2 id="flex-container-父元素-的属性"><a href="#flex-container-父元素-的属性" class="headerlink" title="flex container(父元素)的属性"></a>flex container(父元素)的属性</h2>flex-direction属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.father &#123;</span><br><span class="line">  flex-direction: row; //从左到右定向的水平轴</span><br><span class="line">  flex-direction: row-reverse; //从右到左定向的水平轴</span><br><span class="line">  flex-direction: column; //从上到下</span><br><span class="line">  flex-direction: column-reverse; //从下到上，reverse反向的意思</span><br><span class="line">  flex-wrap: wrap; //换行</span><br><span class="line">  flex-wrap: no wrap; //不换行</span><br><span class="line">  flex-flow: row wrap; //direction和wrap俩个的简写方式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>justify-content主线轴对齐方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">  justify-content: space-between; //空间放son中间</span><br><span class="line">  justify-content: space-arround; //空间放son周围</span><br><span class="line">  justify-content: flex-start; //son都在开始处向后一直排列</span><br><span class="line">  justify-content: flex-end; //和上个相反</span><br><span class="line">  justify-content: center; //主轴上居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>align-items侧轴对齐方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.father&#123;</span><br><span class="line">  align-items: stretch; </span><br><span class="line">  align-items: flex-start; </span><br><span class="line">  align-items: flex-end; </span><br><span class="line">  align-items: center; //侧轴上对齐</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;1&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;2&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;3&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;2&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;3&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.father&#123;</span><br><span class="line">  border: 1px solid;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-wrap: wrap;</span><br><span class="line">  flex-flow: row wrap;</span><br><span class="line">  /* flex-direction: row; */</span><br><span class="line">  /* flex-direction: row-reverse; */</span><br><span class="line">  /* flex-direction: column; */</span><br><span class="line">  /* flex-direction: column-reverse; */</span><br><span class="line">  /* flex-wrap: no wrap; */</span><br><span class="line">&#125;</span><br><span class="line">.son&#123;</span><br><span class="line">  border: 1px solid grey;</span><br><span class="line">  width: 30px;</span><br><span class="line">  height: 30px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="父元素上一定加上display-flex-其他一个个试就能明白意思。就不多说了。"><a href="#父元素上一定加上display-flex-其他一个个试就能明白意思。就不多说了。" class="headerlink" title="父元素上一定加上display:flex;其他一个个试就能明白意思。就不多说了。"></a>父元素上一定加上display:flex;其他一个个试就能明白意思。就不多说了。</h3><h2 id="Flex-Item-子元素-的属性"><a href="#Flex-Item-子元素-的属性" class="headerlink" title="Flex Item(子元素)的属性"></a>Flex Item(子元素)的属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flex-grow 增长比例(空间过多时)</span><br><span class="line">flex-grow: 1; //所以剩余的空间都给1这个孩子</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flex-shrink: 收缩比例(空间不够时)</span><br><span class="line">flex-basis: 默认大小(一般不用)</span><br><span class="line">order: 1; 把这个孩子放第一位</span><br><span class="line">align-self: center;这个孩子独树一帜放中间，和其他孩子不在同一位置。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=&quot;father&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;son1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot;&gt;2&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot;&gt;3&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot;&gt;2&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;son&quot;&gt;3&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.father&#123;</span><br><span class="line">  border: 1px solid;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.son1&#123;</span><br><span class="line">  border: 1px solid grey;</span><br><span class="line">  width: 30px;</span><br><span class="line">  height: 30px;</span><br><span class="line">  flex-grow: 1; //1放在第一位</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/03/09/5c83ce274de22.png" alt="_3MLPLZD4FQJL58{HT25G1G.png"><br>flex常用的大概是这些，需要动手实践，慢慢去记，写得多了就记住了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/CSS为什么易学/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -956,27 +1095,35 @@
         
           
             <h2 id="CSS-Item内容解析"><a href="#CSS-Item内容解析" class="headerlink" title="CSS Item内容解析"></a>CSS Item内容解析</h2><p>就是用HTML和CSS写了个小东西，讲解一下部分重要的之前没有讲到的。</p>
+<h3 id="a标签有默认样式，默认有个下划线。所以这样去除默认样式："><a href="#a标签有默认样式，默认有个下划线。所以这样去除默认样式：" class="headerlink" title="a标签有默认样式，默认有个下划线。所以这样去除默认样式："></a>a标签有默认样式，默认有个下划线。所以这样去除默认样式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>a标签默认颜色一般是黑色，你可以这样写，让它继承父元素的颜色。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  color: red; //父元素是红色</span><br><span class="line">&#125; </span><br><span class="line">a &#123;</span><br><span class="line">  color: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;xxx&lt;/span&gt;</span><br><span class="line">&lt;span&gt;yyy&lt;/span&gt; //xxx yyy</span><br><span class="line">&lt;span&gt;xxx&lt;/span&gt;&lt;span&gt;xxx&lt;/span&gt; //xxxyyy</span><br></pre></td></tr></table></figure>
+<p>看到区别了吗？span的空格会在文本上展示出来，不想有空格span之间也不能有空格。</p>
+<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><p>span标签里最好不要加div</p>
+<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><p>span不支持设宽高，可padding: ?px ?px;设置需要的宽高,不需要写很复杂。</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">a &#123;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>div的高度是由其内部文档流元素的高度总和决定</p>
+</li>
+<li><p>什么是文档流文档内元素的流动方向(通俗解释)<br>举例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;span&gt;x&lt;/span&gt; //内联元素</span><br><span class="line">  &lt;span&gt;x&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;x&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;x&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;x&lt;/span&gt;</span><br><span class="line">  &lt;div&gt;y&lt;/div&gt;  //块级元素</span><br><span class="line">  &lt;div&gt;y&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;y&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;y&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;y&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">body &#123;</span><br><span class="line">  color: red; //父元素是红色</span><br><span class="line">&#125; </span><br><span class="line">a &#123;</span><br><span class="line">  color: inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看到没，span是左右流动，div是上下流动。所以说div的高度是由内容撑起来的，不需要设置宽高，否则会引起很多bug。<br><img src="https://i.loli.net/2019/02/25/5c738b3581a1c.png" alt="AHR(A)8HTVQ3WSPSP@TF{XU.png"></p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### 1.</span><br></pre></td></tr></table></figure>
+<li><p>除了迫不得已情况下，不要设置width和height，否则会引起很多bug,(说两遍了)不信you可以try。</p>
+</li>
+<li><p>脱离文档流</p>
 </li>
 </ul>
-<p><span>xxx</span><br><span>yyy</span> //xxx yyy<br><span>xxx</span><span>xxx</span> //xxxyyy<br>看到区别了吗？span的空格会在文本上展示出来，不想有空格span之间也不能有空格。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">##### 2.</span><br><span class="line">```span标签```里最好```不要加div</span><br></pre></td></tr></table></figure></p>
-<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><figure class="highlight plain"><figcaption><span>?px ?px;```设置需要的宽高不需要写很复杂。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```div的高度```是由其内部```文档流```元素的高度总和决定</span><br><span class="line"></span><br><span class="line">- 什么是```文档流```-```文档内元素的流动方向```(通俗解释) </span><br><span class="line">举例</span><br></pre></td></tr></table></figure>
-<p><body><br>  <span>x</span> //内联元素<br>  <span>x</span><br>  <span>x</span><br>  <span>x</span><br>  <span>x</span><br>  <div>y</div>  //块级元素<br>  <div>y</div><br>  <div>y</div><br>  <div>y</div><br>  <div>y</div><br></body><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">看到没，```span```是```左右```流动，```div```是```上下```流动。所以说div的高度是由内容撑起来的，不需要设置宽高，否则会引起很多bug。</span><br><span class="line">![AHR(A)8HTVQ3WSPSP@TF&#123;XU.png](https://i.loli.net/2019/02/25/5c738b3581a1c.png)</span><br><span class="line"></span><br><span class="line">- 除了迫不得已情况下，```不要设置width和height```，否则会引起很多bug,(说两遍了)不信you可以try。</span><br><span class="line">- ```脱离文档流</span><br></pre></td></tr></table></figure></p>
 <p>后面会放项目的预览地址，拿这个例子中来说。添加过图片背景之后不能显示，why？因为块级元素高由文档流高度决定，所以我设置height：515px;使其撑开，但是导致图片没有在我需要的位置，所以需要我们脱离文档流，position: fiexd;脱离之后父亲body就管不了我了,但是又出现新问题了，之前设置的a标签浮动和Rscard并排了，这个时候设置width: 100%;但是你会发现上面九个a链接会超出父元素，肿么办，这么多问题，所以解决套路是在NAVBar里加个div.NavBar-inner，这样就OK了。<br>我知道我的叙述肯定只有我自己能看懂，所以我想说一般情况千万不要设置宽高啊。哭</p>
 <ul>
-<li><figure class="highlight plain"><figcaption><span>```自适应大小```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">逗是说比如```max-width: 300px;```最多不超过300，当你把屏幕缩小它还是挺正常的。如果用width，自己试一下就知道了。(唉，语文老师怕是要被我气屎了)</span><br><span class="line">- hello下面的```三角形```怎么写</span><br></pre></td></tr></table></figure>
-</li>
+<li>max-width自适应大小<br>逗是说比如<figure class="highlight plain"><figcaption><span>300px;```最多不超过300，当你把屏幕缩小它还是挺正常的。如果用width，自己试一下就知道了。(唉，语文老师怕是要被我气屎了)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- hello下面的三角形怎么写</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p><head><meta name="generator" content="Hexo 3.8.0"><br>  <meta charset="utf-8"><br>  <title>Triangle</title><br>  <style><br>    div {<br>      border: 10px solid red;<br>      border-top-color: transparent; //透明<br>      border-bottom-color: transparent; //透明<br>      border-right-color: transparent; //透明<br>      border-top-width: 0px;<br>    }<br>  </style><br></head></p>
-<p><body><br>  <div></div><br></body><br><code>`</code><br><img src="https://i.loli.net/2019/02/25/5c739669b603b.png" alt></p>
+<p><body><br>  <div></div><br></body><br><code>`</code></p>
+<p><img src="https://i.loli.net/2019/02/25/5c739669b603b.png" alt></p>
 <ul>
-<li><code>vertical-align: top;</code> 垂直对齐一幅图像</li>
+<li>vertical-align: top; 垂直对齐一幅图像</li>
 </ul>
 <p><a href="http://192.168.3.9:8080/HTML%E5%AE%9E%E6%88%98/html.html" target="_blank" rel="noopener">Item预览</a></p>
 
@@ -1433,132 +1580,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/20/HTML/" itemprop="url">HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T14:08:16+08:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="HTML-Hyper-Text-Markup-Language-超文本标记语言"><a href="#HTML-Hyper-Text-Markup-Language-超文本标记语言" class="headerlink" title="HTML (Hyper Text Markup Language) 超文本标记语言"></a>HTML (Hyper Text Markup Language) 超文本标记语言</h2><h2 id="HTML的版本"><a href="#HTML的版本" class="headerlink" title="HTML的版本"></a>HTML的版本</h2><p>HTML 4.01<br>XHTML<br>HTML 5(现在使用5)<br>HTML 5.1<br>XHTML</p>
-<h3 id="HTML使用"><a href="#HTML使用" class="headerlink" title="HTML使用"></a>HTML使用</h3><p>格式是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; DOCTYPE必须大写，</span><br><span class="line">&lt;html&gt; html开头标签</span><br><span class="line">&lt;head&gt;头&lt;/head&gt; </span><br><span class="line">&lt;body&gt;身体&lt;/body&gt; 身体内可以写内容</span><br><span class="line">&lt;/html&gt; /的是html的闭合标签，基本每个标签都有开头和闭合，一些特殊的除外。</span><br></pre></td></tr></table></figure></p>
-<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a 标签定义超链接，用于从一张页面链接到另一张页面。</span><br><span class="line">form 为用户创建HTML表单</span><br><span class="line">input 提交</span><br><span class="line">button 按钮</span><br><span class="line">h1到h6 定义标题，(h1到h6字体大小粗细不一)</span><br><span class="line">p 表示段落</span><br><span class="line">ul 无序列表</span><br><span class="line">ol 有序列表</span><br><span class="line">small 与strong相反</span><br><span class="line">strong 加重</span><br><span class="line">div divide缩写，和span一样分区域</span><br><span class="line">span span和div没有默认样式</span><br><span class="line">kbd keyboard键盘，定义键盘文本</span><br><span class="line">video 视频</span><br><span class="line">audio 音频</span><br><span class="line">svg 图标</span><br></pre></td></tr></table></figure>
-<p>标签有很多，其他的可查询<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>进行了解.</p>
-<h3 id="什么是空标签"><a href="#什么是空标签" class="headerlink" title="什么是空标签"></a>什么是空标签</h3><p>通俗说某个标签使用闭合标签是无效的，那它就是空标签。比如&lt;br&gt;强制换行的意思,它没有闭合标签&lt;/br&gt;它就是空标签。</p>
-<h3 id="什么是可替换元素"><a href="#什么是可替换元素" class="headerlink" title="什么是可替换元素"></a>什么是可替换元素</h3><p><strong>定义</strong>: 可替换元素（replaced element）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。<br>就比如img标签吧，一般情况是不是css设置它的宽高等，但是可以这样，在html设置它的宽高。不用css设置。如果再用css设置，css就会覆盖html设置的。常见的可替换元素有img，object，video等等<br><img src="https://i.loli.net/2019/02/20/5c6d5544a6ad4.png" alt="YZNRQ{AO}UT9}8~3V(%6JWC.png"></p>
-<p>小tip: &amp; l t ;是这个符号&lt; &amp; g t ;是这个符号&gt;这叫转义，有些符号等在文本中打不出来。自己试一下就知道了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1609,7 +1630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

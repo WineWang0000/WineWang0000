@@ -229,6 +229,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/HTML/" itemprop="url">HTML</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T14:08:16+08:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML-Hyper-Text-Markup-Language-超文本标记语言"><a href="#HTML-Hyper-Text-Markup-Language-超文本标记语言" class="headerlink" title="HTML (Hyper Text Markup Language) 超文本标记语言"></a>HTML (Hyper Text Markup Language) 超文本标记语言</h2><h2 id="HTML的版本"><a href="#HTML的版本" class="headerlink" title="HTML的版本"></a>HTML的版本</h2><p>HTML 4.01<br>XHTML<br>HTML 5(现在使用5)<br>HTML 5.1<br>XHTML</p>
+<h3 id="HTML使用"><a href="#HTML使用" class="headerlink" title="HTML使用"></a>HTML使用</h3><p>格式是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; DOCTYPE必须大写，</span><br><span class="line">&lt;html&gt; html开头标签</span><br><span class="line">&lt;head&gt;头&lt;/head&gt; </span><br><span class="line">&lt;body&gt;身体&lt;/body&gt; 身体内可以写内容</span><br><span class="line">&lt;/html&gt; /的是html的闭合标签，基本每个标签都有开头和闭合，一些特殊的除外。</span><br></pre></td></tr></table></figure></p>
+<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a 标签定义超链接，用于从一张页面链接到另一张页面。</span><br><span class="line">form 为用户创建HTML表单</span><br><span class="line">input 提交</span><br><span class="line">button 按钮</span><br><span class="line">h1到h6 定义标题，(h1到h6字体大小粗细不一)</span><br><span class="line">p 表示段落</span><br><span class="line">ul 无序列表</span><br><span class="line">ol 有序列表</span><br><span class="line">small 与strong相反</span><br><span class="line">strong 加重</span><br><span class="line">div divide缩写，和span一样分区域</span><br><span class="line">span span和div没有默认样式</span><br><span class="line">kbd keyboard键盘，定义键盘文本</span><br><span class="line">video 视频</span><br><span class="line">audio 音频</span><br><span class="line">svg 图标</span><br></pre></td></tr></table></figure>
+<p>标签有很多，其他的可查询<a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">MDN</a>进行了解.</p>
+<h3 id="什么是空标签"><a href="#什么是空标签" class="headerlink" title="什么是空标签"></a>什么是空标签</h3><p>通俗说某个标签使用闭合标签是无效的，那它就是空标签。比如&lt;br&gt;强制换行的意思,它没有闭合标签&lt;/br&gt;它就是空标签。</p>
+<h3 id="什么是可替换元素"><a href="#什么是可替换元素" class="headerlink" title="什么是可替换元素"></a>什么是可替换元素</h3><p><strong>定义</strong>: 可替换元素（replaced element）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。<br>就比如img标签吧，一般情况是不是css设置它的宽高等，但是可以这样，在html设置它的宽高。不用css设置。如果再用css设置，css就会覆盖html设置的。常见的可替换元素有img，object，video等等<br><img src="https://i.loli.net/2019/02/20/5c6d5544a6ad4.png" alt="YZNRQ{AO}UT9}8~3V(%6JWC.png"></p>
+<p>小tip: &amp; l t ;是这个符号&lt; &amp; g t ;是这个符号&gt;这叫转义，有些符号等在文本中打不出来。自己试一下就知道了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Node-js-Server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -986,7 +1112,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
