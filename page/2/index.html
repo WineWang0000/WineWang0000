@@ -229,6 +229,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/CSS常见样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/CSS常见样式/" itemprop="url">CSS常见样式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T17:11:14+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS常见样式"><a href="#CSS常见样式" class="headerlink" title="CSS常见样式"></a>CSS常见样式</h2><h3 id="1-color属性"><a href="#1-color属性" class="headerlink" title="1.color属性"></a>1.color属性</h3><h4 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  color: red;</span><br><span class="line">  background-color: rgba (0,0,0,0.2); //RGBA是代表Red（红色） Green（绿色） Blue（蓝色）和 Alpha的色彩空间，也就是透明度/不透明度</span><br><span class="line">&#125;</span><br><span class="line">把h1标签设为红色，把h1和red设为你需要的即可。</span><br></pre></td></tr></table></figure>
+<p>补充一点东西<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#000 黑色</span><br><span class="line">#fff 白色</span><br><span class="line">#eee 淡灰色</span><br><span class="line">#ccc 灰色</span><br><span class="line">#666 深灰色</span><br><span class="line">#333 深黑色</span><br><span class="line">#f00 红色(是零零不是哦哦)</span><br><span class="line">#0f0 绿色</span><br><span class="line">#00f 蓝色</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-background属性-如何定位背景图像"><a href="#2-background属性-如何定位背景图像" class="headerlink" title="2.background属性:如何定位背景图像"></a>2.background属性:如何定位背景图像</h3><h4 id="举例：-1"><a href="#举例：-1" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  background: black; //背景色为黑</span><br><span class="line">  background-color: #000; //也是颜色，十六进制的写法。</span><br><span class="line">  background-image: url(images/bg.gif); //设置背景图片</span><br><span class="line">  background-repeat: no-repeat; //背景不重复</span><br><span class="line">  background-position: center; //背景图片居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-border属性：边"><a href="#3-border属性：边" class="headerlink" title="3.border属性：边"></a>3.border属性：边</h3><h4 id="举例：-2"><a href="#举例：-2" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line"> border: 1px solid yellow; //1px实心的黄色边框。这三个值都可以改为自己需要的。</span><br><span class="line"> border-top: 1px solid yellow; //也可以加方位上下左右。top，bottom，left，right。</span><br><span class="line"> border-radius: 3px; //设置圆角3像素</span><br><span class="line"> border-radius: 50%; //成圆形</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-Margin-和-Padding属性"><a href="#4-Margin-和-Padding属性" class="headerlink" title="4.Margin 和 Padding属性"></a>4.Margin 和 Padding属性</h3><h4 id="举例：-3"><a href="#举例：-3" class="headerlink" title="举例："></a>举例：</h4><p>什么是margin，padding，其实就是边距。↓<br><img src="https://i.loli.net/2019/02/23/5c7113c273426.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  margin-top: 10px; //上设为10像素</span><br><span class="line">  margin-right: 5px;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">  margin-left: 5px;</span><br><span class="line">  margin: 10px 5px 10px 5px; //可以简写为这样，顺序是上右下左。</span><br><span class="line">  padding: 11px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-Font属性"><a href="#5-Font属性" class="headerlink" title="5.Font属性"></a>5.Font属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">font-size: 12px; 字体大小</span><br><span class="line">font-family: Arial; 字体，宋体，微软，Arial等。</span><br><span class="line">font-weight: 文字粗度，常用默认regular和粗体bold。</span><br><span class="line">font-height: 行高</span><br><span class="line">font: 14px/1.4 Arial; 字体大小，行高，字体</span><br></pre></td></tr></table></figure>
+<h3 id="6-Text属性"><a href="#6-Text属性" class="headerlink" title="6.Text属性"></a>6.Text属性</h3><h4 id="举例：-4"><a href="#举例：-4" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  text-align: center; //文本对齐方式，此外有left，right，justify(两端对齐)</span><br><span class="line">  text-indent: 2px; //首行缩进</span><br><span class="line">  text-decoration: none; //文本装饰，none是去掉下划线(HTMLa标签会默认有下划线，设为none即可)line-through(删除线)，underline(下划线)，overline(顶部的线)</span><br><span class="line">  text-transform: uppercase; //改变文字大小写。uppercase小改大，lowercase大改小，capitalize首字母大写。</span><br><span class="line">  word-spacing: 改变字之间的间距</span><br><span class="line">  letter-spacing: 改变字母与字母的间距</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-float属性-浮动"><a href="#7-float属性-浮动" class="headerlink" title="7.float属性 浮动"></a>7.float属性 浮动</h3><h4 id="举例：-5"><a href="#举例：-5" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ul &#123;</span><br><span class="line">  float:left; //向左浮动</span><br><span class="line">  float: right; //向右浮动</span><br><span class="line">&#125;</span><br><span class="line">使用浮动必须给父元素清除浮动,不然可能会出问题，给父元素加上这句就行：</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br><span class="line">这就像数学中的固定公式一样</span><br></pre></td></tr></table></figure>
+<h3 id="8-透明or隐藏"><a href="#8-透明or隐藏" class="headerlink" title="8.透明or隐藏"></a>8.透明or隐藏</h3><h4 id="举例：-6"><a href="#举例：-6" class="headerlink" title="举例："></a>举例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">opacity: 0; 透明度为0</span><br><span class="line">risibility: hidden; 和↑类似</span><br><span class="line">display: none; 消失</span><br><span class="line">background-color: rgba (0,0,0,0.2); 只背景色透明</span><br></pre></td></tr></table></figure>
+<h3 id="9-display属性-指定元素的显示类型"><a href="#9-display属性-指定元素的显示类型" class="headerlink" title="9.display属性 指定元素的显示类型"></a>9.display属性 指定元素的显示类型</h3><p>了解这个先要讲解下块级元素和行内元素。</p>
+<h4 id="行内元素："><a href="#行内元素：" class="headerlink" title="行内元素："></a>行内元素：</h4><p>  自己的独立空间，它是依附于其他块级元素存在的，因此，对行内元素设置高度、宽度、内外边距等属性，都是无效的。比如a标签。样式是行内元素，因此对a元素设置高度、宽度等属性，都是无效的。</p>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p>比如div，p，li，img等默认情况下的display属性值就是“block”。所以对于链接a来说只能这样：display: inline;改为display: block;强制将它改成块元素。看代码。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style=&quot;display:block;&quot;&gt;block属性&lt;/span&gt; //这样才能给span行内元素设置宽高等</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">display: block;</span><br><span class="line">display: inline;</span><br><span class="line">display: run-in;</span><br><span class="line">display: flow;</span><br><span class="line">display: flow-root;</span><br><span class="line">display: table;</span><br><span class="line">display: flex;</span><br><span class="line">display: grid;</span><br><span class="line">display: ruby;</span><br></pre></td></tr></table></figure>
+<p>用法较多，可点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="noopener">MDN</a>查看</p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10.其他"></a>10.其他</h3><h4 id="举例"><a href="#举例" class="headerlink" title="举例:"></a>举例:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">h1:hover &#123;</span><br><span class="line">  border-bottom: 1px solid orange; //鼠标放上时底边出现1px的橘色边,鼠标移开则消失。</span><br><span class="line">&#125;</span><br><span class="line">ul &#123;</span><br><span class="line">  list-style: none; //去掉ul列表中默认的点&quot;.&quot;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  overflow: hidden; //后面多出的文字隐藏</span><br><span class="line">  white-space: nowrap; //不折行，一直写出文本框</span><br><span class="line">  text-overflow: ellipsis; //超出文本内容变成...格式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>暂时想到这么多，一般情况下够用，有需要的可以MDN查询。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/CSS介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1395,7 +1531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
