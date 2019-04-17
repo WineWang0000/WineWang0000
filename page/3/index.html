@@ -229,6 +229,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/19/脚本/" itemprop="url">脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T19:11:51+08:00">
+                2019-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h4><h5 id="what’s-脚本？"><a href="#what’s-脚本？" class="headerlink" title="what’s 脚本？"></a>what’s 脚本？</h5><p>脚本就是给计算机照做的文本。举例，图上的都是脚本，输入这些文本让计算机执行。<br><img src="https://i.loli.net/2019/02/17/5c69310c8d182.png" alt="QWOB~E]X9G5AX%CO57$PN31.png"></p>
+<h4 id="写脚本-用文件写脚本"><a href="#写脚本-用文件写脚本" class="headerlink" title="写脚本(用文件写脚本)"></a>写脚本(用文件写脚本)</h4><p>步骤如下：<br>cd ~/Desktop<br>mkdir local<br>cd local<br>touch demo.txt<br>start demo.txt</p>
+<h6 id="这时候会出现一个demo笔记本空白页面"><a href="#这时候会出现一个demo笔记本空白页面" class="headerlink" title="(这时候会出现一个demo笔记本空白页面)"></a>(这时候会出现一个demo笔记本空白页面)</h6><p>mkdir demo<br>cd demo<br>mkdir css js<br>touch index.html<br>css/style.css<br>js/main.js</p>
+<h6 id="这里可以随便创建文件或者目录。演示用。写完Ctrl-S保存。然后关闭"><a href="#这里可以随便创建文件或者目录。演示用。写完Ctrl-S保存。然后关闭" class="headerlink" title="(这里可以随便创建文件或者目录。演示用。写完Ctrl+S保存。然后关闭)"></a>(这里可以随便创建文件或者目录。演示用。写完Ctrl+S保存。然后关闭)</h6><h6 id="回到bash上"><a href="#回到bash上" class="headerlink" title="(回到bash上)"></a>(回到bash上)</h6><p>cd ~/Desktop<br>chmod +x demo.txt</p>
+<h6 id="给demo加X，让它可以执行。此步window可省略"><a href="#给demo加X，让它可以执行。此步window可省略" class="headerlink" title="(给demo加X，让它可以执行。此步window可省略)"></a>(给demo加X，让它可以执行。此步window可省略)</h6><p>sh ~/local/demo.txt(执行)</p>
+<p>如果什么都没有出现那就成功了</p>
+<p>自己动手写一个脚本</p>
+<h4 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h4><h5 id="用Node-js写脚本"><a href="#用Node-js写脚本" class="headerlink" title="用Node.js写脚本"></a>用Node.js写脚本</h5><p>创建 ~/local/jsdemo.js，内容如下<br>var fs = require(‘fs’)<br>var dirName = process.argv[2] // 你传的参数是从第 2 个开始的<br>fs.mkdirSync(“./“ + dirName) // mkdir $1<br>process.chdir(“./“ + dirName) // cd $1<br>fs.mkdirSync(‘css’) // mkdir css<br>fs.mkdirSync(‘js’) // mkdir js<br>fs.writeFileSync(“./index.html”, “”)<br>fs.writeFileSync(“css/style.css”, “”)<br>fs.writeFileSync(“./js/main.js”, “”)<br>process.exit(0)<br>（Windows 用户跳过这一步）给 jsdemo.js 加上执行权限 chmod +x ~/local/jsdemo.js<br>cd ~/Desktop<br>node ~/local/jsdemo.js zzz，就可以看到 zzz 目录创建成功了</p>
+<h5 id="shebang"><a href="#shebang" class="headerlink" title="shebang"></a>shebang</h5><p>我们每次执行 ~/local/jsdemo.js 都要用 node 来执行，能不能做到不加 node 也能执行呢（也就是指定执行环境），可以，在 jsdemo.js 第一行加上这一句即可：</p>
+<h2 id="usr-bin-env-node"><a href="#usr-bin-env-node" class="headerlink" title="!/usr/bin/env node"></a>!/usr/bin/env node</h2><p>node和bash功能差不多就是语法不一样，遇到不知道的就谷歌，不需要死记硬背。伤脑筋。。。。。。</p>
+<h5 id="用js脚本创建目录"><a href="#用js脚本创建目录" class="headerlink" title="用js脚本创建目录"></a>用js脚本创建目录</h5><p>谷歌关键字： nodejs create dir 搜索结果直接用就可以<br>let fs = require(“fs”)<br>fs.mkdirSync (“demo”)demo为目录名</p>
+<h5 id="用js脚本创建文件"><a href="#用js脚本创建文件" class="headerlink" title="用js脚本创建文件"></a>用js脚本创建文件</h5><p>谷歌关键字： nodejs create file<br>let fs = require(“fs”)<br>fs.writeFileSync(“./index.html”, “ “)这里文件写的为空</p>
+<h5 id="判断目录是否已存在"><a href="#判断目录是否已存在" class="headerlink" title="判断目录是否已存在"></a>判断目录是否已存在</h5><p>if [ -d $1 ]; then<br>  echo ‘error: dir exists’<br>  exit 1<br>else<br>  mkdir $1<br>  cd $1<br>  mkdir css js<br>  touch index.html css/style.css js/main.js<br>  echo ‘success’<br>  exit 0<br>fi<br>在出现的笔记本里写入这些，第一行是语法，不需要明白为什么，注意空格和符合等。最后的fi也不能少。exit后面的0,1是 <strong>返回值</strong>，如果成功返回0，不成功为1.<br>还有一个需要说的是bash里输入node就在node.js环境下了，Ctrl+D再切回。</p>
+<h4 id="脚本-1"><a href="#脚本-1" class="headerlink" title="脚本"></a>脚本</h4><h5 id="what’s-脚本？-1"><a href="#what’s-脚本？-1" class="headerlink" title="what’s 脚本？"></a>what’s 脚本？</h5><p>脚本就是给计算机照做的文本。举例，图上的都是脚本，输入这些文本让计算机执行。<br><img src="https://i.loli.net/2019/02/17/5c69310c8d182.png" alt="QWOB~E]X9G5AX%CO57$PN31.png"></p>
+<h4 id="写脚本-用文件写脚本-1"><a href="#写脚本-用文件写脚本-1" class="headerlink" title="写脚本(用文件写脚本)"></a>写脚本(用文件写脚本)</h4><p>步骤如下：<br>cd ~/Desktop<br>mkdir local<br>cd local<br>touch demo.txt<br>start demo.txt</p>
+<h6 id="这时候会出现一个demo笔记本空白页面-1"><a href="#这时候会出现一个demo笔记本空白页面-1" class="headerlink" title="(这时候会出现一个demo笔记本空白页面)"></a>(这时候会出现一个demo笔记本空白页面)</h6><p>mkdir demo<br>cd demo<br>mkdir css js<br>touch index.html<br>css/style.css<br>js/main.js</p>
+<h6 id="这里可以随便创建文件或者目录。演示用。写完Ctrl-S保存。然后关闭-1"><a href="#这里可以随便创建文件或者目录。演示用。写完Ctrl-S保存。然后关闭-1" class="headerlink" title="(这里可以随便创建文件或者目录。演示用。写完Ctrl+S保存。然后关闭)"></a>(这里可以随便创建文件或者目录。演示用。写完Ctrl+S保存。然后关闭)</h6><h6 id="回到bash上-1"><a href="#回到bash上-1" class="headerlink" title="(回到bash上)"></a>(回到bash上)</h6><p>cd ~/Desktop<br>chmod +x demo.txt</p>
+<h6 id="给demo加X，让它可以执行。此步window可省略-1"><a href="#给demo加X，让它可以执行。此步window可省略-1" class="headerlink" title="(给demo加X，让它可以执行。此步window可省略)"></a>(给demo加X，让它可以执行。此步window可省略)</h6><p>sh ~/local/demo.txt(执行)</p>
+<p>如果什么都没有出现那就成功了</p>
+<p>自己动手写一个脚本</p>
+<h4 id="Node-js-1"><a href="#Node-js-1" class="headerlink" title="Node.js"></a>Node.js</h4><h5 id="用Node-js写脚本-1"><a href="#用Node-js写脚本-1" class="headerlink" title="用Node.js写脚本"></a>用Node.js写脚本</h5><p>创建 ~/local/jsdemo.js，内容如下<br>var fs = require(‘fs’)<br>var dirName = process.argv[2] // 你传的参数是从第 2 个开始的<br>fs.mkdirSync(“./“ + dirName) // mkdir $1<br>process.chdir(“./“ + dirName) // cd $1<br>fs.mkdirSync(‘css’) // mkdir css<br>fs.mkdirSync(‘js’) // mkdir js<br>fs.writeFileSync(“./index.html”, “”)<br>fs.writeFileSync(“css/style.css”, “”)<br>fs.writeFileSync(“./js/main.js”, “”)<br>process.exit(0)<br>（Windows 用户跳过这一步）给 jsdemo.js 加上执行权限 chmod +x ~/local/jsdemo.js<br>cd ~/Desktop<br>node ~/local/jsdemo.js zzz，就可以看到 zzz 目录创建成功了</p>
+<h5 id="shebang-1"><a href="#shebang-1" class="headerlink" title="shebang"></a>shebang</h5><p>我们每次执行 ~/local/jsdemo.js 都要用 node 来执行，能不能做到不加 node 也能执行呢（也就是指定执行环境），可以，在 jsdemo.js 第一行加上这一句即可：</p>
+<h2 id="usr-bin-env-node-1"><a href="#usr-bin-env-node-1" class="headerlink" title="!/usr/bin/env node"></a>!/usr/bin/env node</h2><p>node和bash功能差不多就是语法不一样，遇到不知道的就谷歌，不需要死记硬背。伤脑筋。。。。。。</p>
+<h5 id="用js脚本创建目录-1"><a href="#用js脚本创建目录-1" class="headerlink" title="用js脚本创建目录"></a>用js脚本创建目录</h5><p>谷歌关键字： nodejs create dir 搜索结果直接用就可以<br>let fs = require(“fs”)<br>fs.mkdirSync (“demo”)demo为目录名</p>
+<h5 id="用js脚本创建文件-1"><a href="#用js脚本创建文件-1" class="headerlink" title="用js脚本创建文件"></a>用js脚本创建文件</h5><p>谷歌关键字： nodejs create file<br>let fs = require(“fs”)<br>fs.writeFileSync(“./index.html”, “ “)这里文件写的为空</p>
+<h5 id="判断目录是否已存在-1"><a href="#判断目录是否已存在-1" class="headerlink" title="判断目录是否已存在"></a>判断目录是否已存在</h5><p>if [ -d $1 ]; then<br>  echo ‘error: dir exists’<br>  exit 1<br>else<br>  mkdir $1<br>  cd $1<br>  mkdir css js<br>  touch index.html css/style.css js/main.js<br>  echo ‘success’<br>  exit 0<br>fi<br>在出现的笔记本里写入这些，第一行是语法，不需要明白为什么，注意空格和符合等。最后的fi也不能少。exit后面的0,1是 <strong>返回值</strong>，如果成功返回0，不成功为1.<br>还有一个需要说的是bash里输入node就在node.js环境下了，Ctrl+D再切回。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/命令行/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -528,7 +673,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
