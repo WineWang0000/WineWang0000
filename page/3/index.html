@@ -229,6 +229,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Node-js-Server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/19/Node-js-Server/" itemprop="url">Node.js-Server</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T20:03:48+08:00">
+                2019-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HTTP的底层是由TCP和IP协议构成的</p>
+<h2 id="TCP传输协议控制-Transmission-Control-Protocol"><a href="#TCP传输协议控制-Transmission-Control-Protocol" class="headerlink" title="TCP传输协议控制(Transmission Control Protocol)"></a>TCP传输协议控制(Transmission Control Protocol)</h2><p>面试的时候最多问两个问题，看博客了解一下即可。</p>
+<ul>
+<li><p>TCP和UDP的区别？</p>
+<p>简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。</p>
+</li>
+<li>TCP 的三次握手指的是什么<br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：<ol>
+<li>客户端：我要连接你了，可以吗</li>
+<li>服务端：嗯，我准备好了，连接我吧</li>
+<li>客户端：那我连接你咯。</li>
+<li>开始后面步骤<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2>有一些琐碎的知识点:</li>
+</ol>
+</li>
+</ul>
+<p>1.IP分为内网外网，中间人是路由器，你的设备，像电脑手机和路由器过程的是内网。如果想连接外网是需要路由器中转的。</p>
+<p>2.访问127.0.0.1是访问自己(设备)</p>
+<p>3.内网IP格式：192.168.xx.xx</p>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>访问设备只有IP是不行的，还需要有端口，端口是什么，其实只是一个编号。</p>
+<h3 id="一个端口只对应一个服务"><a href="#一个端口只对应一个服务" class="headerlink" title="一个端口只对应一个服务"></a>一个端口只对应一个服务</h3><p>1.要提供 HTTP 服务你最好使用 80 端口</p>
+<p>2.要提供 HTTPS 服务你最好使用 443 端口</p>
+<p>3.要提供 FTP 服务你最好使用 21 端口</p>
+<ul>
+<li><p>不知道用什么端口号可以<a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a></p>
+</li>
+<li><p>一共有多少端口号：65535 0~1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</p>
+</li>
+</ul>
+<h1 id="用server接收请求"><a href="#用server接收请求" class="headerlink" title="用server接收请求"></a>用server接收请求</h1><p>简述步骤：</p>
+<ul>
+<li>cd ~/Desktop</li>
+<li>mkdir node-demo</li>
+<li>cd node-demo</li>
+<li>touch server.js</li>
+<li>编辑server.js （<a href="https://github.com/pingdeng123/note-server/blob/master/server.js" target="_blank" rel="noopener">编辑内容在此</a>）运行 node server.js;</li>
+</ul>
+<p>(里面内容是大神写的，只是借来写个笔记，三扣)</p>
+<h1 id="用server发送响应"><a href="#用server发送响应" class="headerlink" title="用server发送响应"></a>用server发送响应</h1><ul>
+<li>成功之后新开个bash窗口</li>
+<li>编辑sever.js</li>
+<li><p>在标注的地方添加代码<br>response.write(‘hi’)和response.end()</p>
+</li>
+<li><p>中断之前的 server，重新运行 node server 8888</p>
+</li>
+<li><a href="http://127.0.0.1:8888/xxx" target="_blank" rel="noopener">http://127.0.0.1:8888/xxx</a> 打开这个网页就会看到hi</li>
+</ul>
+<p>那两行代码根据英文意思大概也能知道，第一个是写入hi，第二个是结束。和可以加上这些response.statusCode = 200 意思是状态码，200代表成功 response.setHeader(‘Content-Type’, ‘text/html;charset=utf-8’) 这个意思是把得到的内容转成html格式，utf-8就是GBK，这个在之前博客有写。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/HTTP请求/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -821,7 +986,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
