@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="类型转换类型转换一般是用number，string，boolean函数手动将各种类型的值转换为数字，字符串，布尔。 1.Number先看转换成数字    类型 转换成数字     undefined NaN   null 0   string “abc”→NaN,”123”→123   boolean true→1，false→0    2.转换成Boolean   类型 转换成布尔     nu">
+<meta name="description" content="1.无缓存最简单的就是浏览器请求一个图片，服务器找到然后返回给它。当我再请求的时候再发给我。这样就暴露了缺点：我请求的和之前一样的，你也发给我，不觉得浪费吗。优点就是简单 2.有缓存无更新浏览器发请求，服务器返回数据，浏览器把它存在本地，当我下次需要的时候直接从本地获取。but，它的缺点：如果服务器上面这个图片更新了，我浏览器却不知道，总不能让用户清除缓存 吧！这不是很不nice吗。优点就是节约。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS类型转换">
-<meta property="og:url" content="http://yoursite.com/2019/03/27/JS类型转换/index.html">
+<meta property="og:title" content="HTTP缓存机制">
+<meta property="og:url" content="http://yoursite.com/2019/05/02/HTTP缓存机制/index.html">
 <meta property="og:site_name" content="Wine">
-<meta property="og:description" content="类型转换类型转换一般是用number，string，boolean函数手动将各种类型的值转换为数字，字符串，布尔。 1.Number先看转换成数字    类型 转换成数字     undefined NaN   null 0   string “abc”→NaN,”123”→123   boolean true→1，false→0    2.转换成Boolean   类型 转换成布尔     nu">
+<meta property="og:description" content="1.无缓存最简单的就是浏览器请求一个图片，服务器找到然后返回给它。当我再请求的时候再发给我。这样就暴露了缺点：我请求的和之前一样的，你也发给我，不觉得浪费吗。优点就是简单 2.有缓存无更新浏览器发请求，服务器返回数据，浏览器把它存在本地，当我下次需要的时候直接从本地获取。but，它的缺点：如果服务器上面这个图片更新了，我浏览器却不知道，总不能让用户清除缓存 吧！这不是很不nice吗。优点就是节约。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-28T01:10:13.234Z">
+<meta property="og:updated_time" content="2019-05-02T15:08:43.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS类型转换">
-<meta name="twitter:description" content="类型转换类型转换一般是用number，string，boolean函数手动将各种类型的值转换为数字，字符串，布尔。 1.Number先看转换成数字    类型 转换成数字     undefined NaN   null 0   string “abc”→NaN,”123”→123   boolean true→1，false→0    2.转换成Boolean   类型 转换成布尔     nu">
+<meta name="twitter:title" content="HTTP缓存机制">
+<meta name="twitter:description" content="1.无缓存最简单的就是浏览器请求一个图片，服务器找到然后返回给它。当我再请求的时候再发给我。这样就暴露了缺点：我请求的和之前一样的，你也发给我，不觉得浪费吗。优点就是简单 2.有缓存无更新浏览器发请求，服务器返回数据，浏览器把它存在本地，当我下次需要的时候直接从本地获取。but，它的缺点：如果服务器上面这个图片更新了，我浏览器却不知道，总不能让用户清除缓存 吧！这不是很不nice吗。优点就是节约。">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/27/JS类型转换/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/02/HTTP缓存机制/">
 
 
 
 
 
-  <title>JS类型转换 | Wine</title>
+  <title>HTTP缓存机制 | Wine</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/JS类型转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/HTTP缓存机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WineWang0000">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS类型转换</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP缓存机制</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T22:08:03+08:00">
-                2019-03-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-02T23:07:23+08:00">
+                2019-05-02
               </time>
             
 
@@ -299,80 +299,19 @@
       
 
       
-        <h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><p>类型转换一般是用number，string，boolean函数手动将各种类型的值转换为数字，字符串，布尔。</p>
-<h2 id="1-Number"><a href="#1-Number" class="headerlink" title="1.Number"></a>1.Number</h2><p>先看转换成数字</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">转换成数字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">undefined</td>
-<td style="text-align:left">NaN</td>
-</tr>
-<tr>
-<td style="text-align:left">null</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">string</td>
-<td style="text-align:left">“abc”→NaN,”123”→123</td>
-</tr>
-<tr>
-<td style="text-align:left">boolean</td>
-<td style="text-align:left">true→1，false→0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-转换成Boolean"><a href="#2-转换成Boolean" class="headerlink" title="2.转换成Boolean"></a>2.转换成Boolean</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th style="text-align:left">转换成布尔</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">null</td>
-<td style="text-align:left">false</td>
-</tr>
-<tr>
-<td style="text-align:left">undefined</td>
-<td style="text-align:left">false</td>
-</tr>
-<tr>
-<td style="text-align:left">string</td>
-<td style="text-align:left">空字符串（””）为false，其他都为true</td>
-</tr>
-<tr>
-<td style="text-align:left">NaN</td>
-<td style="text-align:left">false</td>
-</tr>
-<tr>
-<td style="text-align:left">number</td>
-<td style="text-align:left">0→false，其他为true</td>
-</tr>
-<tr>
-<td style="text-align:left">object</td>
-<td style="text-align:left">true</td>
-</tr>
-<tr>
-<td style="text-align:left">boolean</td>
-<td style="text-align:left">boolean</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>五个永远为false的，<strong>0，null，undefined，NaN，空字符串</strong>。</li>
-<li><strong>object</strong> 都是<strong>true</strong></li>
-<li><strong>空字符串</strong>和<strong>空白字符串</strong>是<strong>不一样</strong>的哦！’’里面没有内容，连空格都没有，’ ‘空白字符串中间有空格，不是空的。为true。<h2 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h2>|类型|转换成字符串|<br>|:–|:–|<br>|数字，如3|字符串3|<br>|字符串|还是原来的值|<br>|布尔|字符串布尔,”true”,”false”|<br>|null|”null”|<br>|undefined|”undefined”|<br>举例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(1) //&quot;1&quot;</span><br><span class="line">String(true)  //&quot;true&quot;</span><br><span class="line">String(&apos;2&apos;)   //&quot;2&quot;</span><br><span class="line">String(null)  //&quot;null&quot;</span><br><span class="line">String(undefined)  //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>看几个小测试吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot; == 0</span><br><span class="line">&quot; &quot; == 0</span><br><span class="line">&quot;&quot; == true</span><br><span class="line">&quot; &quot; ==true</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.空字符串转换成数字是0,0==0，为true</span><br><span class="line">2.除空字符串转换成布尔是false，其他都为true</span><br><span class="line">3.true转换成数字是1，&quot;&quot;转换成数字是0，1==0，为false</span><br><span class="line">4.&quot; &quot;转数字是1，true转数字是1,1==1，为true</span><br></pre></td></tr></table></figure>
+        <h4 id="1-无缓存"><a href="#1-无缓存" class="headerlink" title="1.无缓存"></a>1.无缓存</h4><p>最简单的就是浏览器请求一个图片，服务器找到然后返回给它。当我再请求的时候再发给我。这样就暴露了<strong>缺点</strong>：我请求的和之前一样的，你也发给我，不觉得浪费吗。<strong>优点</strong>就是简单</p>
+<h4 id="2-有缓存无更新"><a href="#2-有缓存无更新" class="headerlink" title="2.有缓存无更新"></a>2.有缓存无更新</h4><p>浏览器发请求，服务器返回数据，浏览器把它存在本地，当我下次需要的时候直接从本地获取。but，它的<strong>缺点</strong>：如果服务器上面这个图片更新了，我浏览器却不知道，总不能让用户清除缓存 吧！这不是很不nice吗。<strong>优点</strong>就是节约。</p>
+<h4 id="3-缓存-更新机制"><a href="#3-缓存-更新机制" class="headerlink" title="3.缓存+更新机制"></a>3.缓存+更新机制</h4><p>这一次服务器返回数据的时候加一个过期时间，这样等时间到了，我就可以从服务器那再获取新的了，如果时间未到就还使用本地的。不用说<strong>缺点</strong>是什么呢：因为时间服务器发来的，假如服务器和浏览器的时间不一致呢？电脑上是2018年，服务器的是2019。<strong>优点</strong>：起码它可缓存可控制。</p>
+<h4 id="4-缓存-更新机制升级版"><a href="#4-缓存-更新机制升级版" class="headerlink" title="4.缓存+更新机制升级版"></a>4.缓存+更新机制升级版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cashe-Control: max-age=100;</span><br></pre></td></tr></table></figure>
+<p>那我把过期时间做个限制吧（单位为秒），比如100秒过期，比如在100秒内，就使用本地缓存。100秒外。重新请求。一下有几个是Cashe-Control常见的几个值：</p>
+<p><strong>Public</strong> 表示响应可被中间节点缓存，如Browser&lt;–proxy1&lt;–proxy2&lt;–Server proxy1和2 都可以缓存，比如下次请求1会把东西直接给Browser，不会向2要。</p>
+<p><strong>Private</strong> 表示响应不被中间节点缓存，请求的时候proxy把服务器返回的数据给浏览器，不会自己做主张把自己缓存的东西给浏览器。</p>
+<p><strong>no-cashe</strong> 表示不使用cashe-control的缓存控制方式做前置验证。</p>
+<p><strong>no-store</strong> 表示真正的不缓存任何东西</p>
+<p><strong>max-age=100</strong> 表示当前资源的有效时间，单位为秒。</p>
+<p><strong>不足吧</strong>：当100秒过了，这个图片还是之前的，没有改，还可以继续使用，这时候还会向服务器去发请求。</p>
+<h4 id="5-缓存-更新机制终极版"><a href="#5-缓存-更新机制终极版" class="headerlink" title="5.缓存+更新机制终极版"></a>5.缓存+更新机制终极版</h4><p>除了cashe-control，再加一个Etag（可认为是当前文件（图片）的编码）如果超过100秒重新发请求就会带上Etag，服务器收到之后把这个图片的编码和自己的图片的编码做对比，一样的话，说明图片没有什么改动，返回304状态码，告诉浏览器还是使用自己本地的缓存。和Etag功能相似的是Last-Modified/if-Modified-Since这个更好。</p>
+<h4 id="另外http状态码要记住的几个：200-202-301-304-403-404-500-503"><a href="#另外http状态码要记住的几个：200-202-301-304-403-404-500-503" class="headerlink" title="另外http状态码要记住的几个：200 202 301 304 403 404 500 503"></a>另外http状态码要记住的几个：200 202 301 304 403 404 500 503</h4>
       
     </div>
     
@@ -396,8 +335,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/JS数据类型/" rel="next" title="JS数据类型">
-                <i class="fa fa-chevron-left"></i> JS数据类型
+              <a href="/2019/05/01/跨域/" rel="next" title="跨域">
+                <i class="fa fa-chevron-left"></i> 跨域
               </a>
             
           </div>
@@ -405,10 +344,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/09/JS运算符/" rel="prev" title="JS运算符">
-                JS运算符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +457,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类型转换"><span class="nav-number">1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Number"><span class="nav-number">1.1.</span> <span class="nav-text">1.Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-转换成Boolean"><span class="nav-number">1.2.</span> <span class="nav-text">2.转换成Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-string"><span class="nav-number">1.3.</span> <span class="nav-text">3.string</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-无缓存"><span class="nav-number">1.</span> <span class="nav-text">1.无缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-有缓存无更新"><span class="nav-number">2.</span> <span class="nav-text">2.有缓存无更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-缓存-更新机制"><span class="nav-number">3.</span> <span class="nav-text">3.缓存+更新机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-缓存-更新机制升级版"><span class="nav-number">4.</span> <span class="nav-text">4.缓存+更新机制升级版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-缓存-更新机制终极版"><span class="nav-number">5.</span> <span class="nav-text">5.缓存+更新机制终极版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#另外http状态码要记住的几个：200-202-301-304-403-404-500-503"><span class="nav-number">6.</span> <span class="nav-text">另外http状态码要记住的几个：200 202 301 304 403 404 500 503</span></a></li></ol></div>
             
 
           </div>
