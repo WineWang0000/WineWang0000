@@ -229,6 +229,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/JS类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/27/JS类型转换/" itemprop="url">JS类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T22:08:03+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><p>类型转换一般是用number，string，boolean函数手动将各种类型的值转换为数字，字符串，布尔。</p>
+<h2 id="1-Number"><a href="#1-Number" class="headerlink" title="1.Number"></a>1.Number</h2><p>先看转换成数字</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">转换成数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">NaN</td>
+</tr>
+<tr>
+<td style="text-align:left">null</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">string</td>
+<td style="text-align:left">“abc”→NaN,”123”→123</td>
+</tr>
+<tr>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">true→1，false→0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-转换成Boolean"><a href="#2-转换成Boolean" class="headerlink" title="2.转换成Boolean"></a>2.转换成Boolean</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">转换成布尔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">null</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">string</td>
+<td style="text-align:left">空字符串（””）为false，其他都为true</td>
+</tr>
+<tr>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">number</td>
+<td style="text-align:left">0→false，其他为true</td>
+</tr>
+<tr>
+<td style="text-align:left">object</td>
+<td style="text-align:left">true</td>
+</tr>
+<tr>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">boolean</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>五个永远为false的，<strong>0，null，undefined，NaN，空字符串</strong>。</li>
+<li><strong>object</strong> 都是<strong>true</strong></li>
+<li><strong>空字符串</strong>和<strong>空白字符串</strong>是<strong>不一样</strong>的哦！’’里面没有内容，连空格都没有，’ ‘空白字符串中间有空格，不是空的。为true。<h2 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h2>|类型|转换成字符串|<br>|:–|:–|<br>|数字，如3|字符串3|<br>|字符串|还是原来的值|<br>|布尔|字符串布尔,”true”,”false”|<br>|null|”null”|<br>|undefined|”undefined”|<br>举例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(1) //&quot;1&quot;</span><br><span class="line">String(true)  //&quot;true&quot;</span><br><span class="line">String(&apos;2&apos;)   //&quot;2&quot;</span><br><span class="line">String(null)  //&quot;null&quot;</span><br><span class="line">String(undefined)  //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>看几个小测试吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot; == 0</span><br><span class="line">&quot; &quot; == 0</span><br><span class="line">&quot;&quot; == true</span><br><span class="line">&quot; &quot; ==true</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.空字符串转换成数字是0,0==0，为true</span><br><span class="line">2.除空字符串转换成布尔是false，其他都为true</span><br><span class="line">3.true转换成数字是1，&quot;&quot;转换成数字是0，1==0，为false</span><br><span class="line">4.&quot; &quot;转数字是1，true转数字是1,1==1，为true</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/JS数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1436,131 +1628,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/ItemCode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/28/ItemCode/" itemprop="url">Item</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T22:49:25+08:00">
-                2019-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/WineWang0000/demo/tree/master/Resume" target="_blank" rel="noopener">ItemGitHubPreview</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1606,7 +1678,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
