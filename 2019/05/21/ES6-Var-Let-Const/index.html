@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.var 可声明前置，let不可。123var aa = 3var a = 4 12a = 3let a //报错 2.let不可重复声明(var 可以)12let a = 1let 2 = 2 //报错 3.存在块级作用域1234for (let i = 0; i &amp;lt; 4; i++)&amp;#123;    console.log(i) // 0 1 2 3 只能在这个花括号内，外面作用域是没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-Var-Let-Const">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/ES6-Var-Let-Const/index.html">
+<meta property="og:site_name" content="Wine">
+<meta property="og:description" content="1.var 可声明前置，let不可。123var aa = 3var a = 4 12a = 3let a //报错 2.let不可重复声明(var 可以)12let a = 1let 2 = 2 //报错 3.存在块级作用域1234for (let i = 0; i &amp;lt; 4; i++)&amp;#123;    console.log(i) // 0 1 2 3 只能在这个花括号内，外面作用域是没">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/31/168a40724f89842e?w=808&h=421&f=png&s=69021">
+<meta property="og:updated_time" content="2019-05-21T15:32:14.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6-Var-Let-Const">
+<meta name="twitter:description" content="1.var 可声明前置，let不可。123var aa = 3var a = 4 12a = 3let a //报错 2.let不可重复声明(var 可以)12let a = 1let 2 = 2 //报错 3.存在块级作用域1234for (let i = 0; i &amp;lt; 4; i++)&amp;#123;    console.log(i) // 0 1 2 3 只能在这个花括号内，外面作用域是没">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/1/31/168a40724f89842e?w=808&h=421&f=png&s=69021">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/ES6-Var-Let-Const/">
+
+
+
+
+
+  <title>ES6-Var-Let-Const | Wine</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/ES6-Var-Let-Const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6-Var-Let-Const</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T23:30:48+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-var-可声明前置，let不可。"><a href="#1-var-可声明前置，let不可。" class="headerlink" title="1.var 可声明前置，let不可。"></a>1.var 可声明前置，let不可。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a</span><br><span class="line">a = 3</span><br><span class="line">var a = 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = 3</span><br><span class="line">let a //报错</span><br></pre></td></tr></table></figure>
+<h4 id="2-let不可重复声明-var-可以"><a href="#2-let不可重复声明-var-可以" class="headerlink" title="2.let不可重复声明(var 可以)"></a>2.let不可重复声明(var 可以)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = 1</span><br><span class="line">let 2 = 2 //报错</span><br></pre></td></tr></table></figure>
+<h4 id="3-存在块级作用域"><a href="#3-存在块级作用域" class="headerlink" title="3.存在块级作用域"></a>3.存在块级作用域</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 4; i++)&#123;</span><br><span class="line">    console.log(i) // 0 1 2 3 只能在这个花括号内，外面作用域是没有i的。</span><br><span class="line">&#125;</span><br><span class="line">console.log(i) //报错：i is not defined</span><br></pre></td></tr></table></figure>
+<h4 id="4-const-和let一样不可重复声明，不可声明前置及存在块级作用域。"><a href="#4-const-和let一样不可重复声明，不可声明前置及存在块级作用域。" class="headerlink" title="4.const 和let一样不可重复声明，不可声明前置及存在块级作用域。"></a>4.const 和let一样不可重复声明，不可声明前置及存在块级作用域。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const a = 5</span><br><span class="line">a =  3 //报错</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;a:2&#125;</span><br><span class="line">obj.a = 3 //没问题。因为const指向的是一个对象，对象不变就可以，这里变的是对象里面的a。</span><br><span class="line">obj = &#123;a: 3&#125; //报错。因为把obj对象重新赋值了。</span><br></pre></td></tr></table></figure>
+<h2 id="数组的解构"><a href="#数组的解构" class="headerlink" title="数组的解构"></a>数组的解构</h2><h4 id="1-数组解构"><a href="#1-数组解构" class="headerlink" title="1.数组解构"></a>1.数组解构</h4><p>这样可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let [a, b ,c] = [1, 2, 3]</span><br><span class="line">console.log(a,b,c) //1 2 3</span><br></pre></td></tr></table></figure></p>
+<p>这样也可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let [a, [b], c] = [1, [2], 3]</span><br><span class="line">console.log([a, [b], c]) // Array(3)0: 21: [3]2: 4length: 3__proto__: Array(0)</span><br><span class="line">a //2</span><br><span class="line">b //3</span><br><span class="line">c //4</span><br></pre></td></tr></table></figure></p>
+<p>这样报错咯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a] = 1 //报错</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-默认值"><a href="#2-默认值" class="headerlink" title="2.默认值"></a>2.默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let [a, b=1] = [2]</span><br><span class="line">a // 2</span><br><span class="line">b // 1 </span><br><span class="line">这个a下标为0，后面的2给a，b没有（undefined）就用b默认的，所以是1.有就用设置的，没有设置就用默认的。</span><br><span class="line"></span><br><span class="line">let [a=1, b=2] = [3, 4]</span><br><span class="line">a // 3</span><br><span class="line">b // 4</span><br><span class="line">设置了就用设置的</span><br><span class="line"></span><br><span class="line">let [a=1, b=2] = [undefined, null]</span><br><span class="line">a // 1</span><br><span class="line">b // null</span><br><span class="line">a没有设置，所以用默认的1</span><br><span class="line">b其实是设置了，只不过是null。</span><br><span class="line"></span><br><span class="line">let [a=1, b=a] = [3]</span><br><span class="line">a // 3</span><br><span class="line">b // 3</span><br></pre></td></tr></table></figure>
+<h4 id="3-对象的解构赋值"><a href="#3-对象的解构赋值" class="headerlink" title="3.对象的解构赋值"></a>3.对象的解构赋值</h4><p>前置知识<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let p = [name, age] //等同于下面的写法(ES6)</span><br><span class="line">let p1 = &#123;name: name, age: age&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对象解构范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let &#123;name: name ,age: age&#125; = &#123;name: &apos;Tom&apos;, age: 18&#125; //等于下面的</span><br><span class="line">let name</span><br><span class="line">let age</span><br><span class="line">(&#123;name: name, age: age&#125; = &#123;name: &apos;Tom&apos;, age: 18&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-对象也有默认值，和上面的意思相同。"><a href="#4-对象也有默认值，和上面的意思相同。" class="headerlink" title="4.对象也有默认值，和上面的意思相同。"></a>4.对象也有默认值，和上面的意思相同。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let &#123;x, y=5&#125; = &#123;x: 1&#125; //y是undefined，所以使用默认的y=5</span><br><span class="line">x //1</span><br><span class="line">y //5</span><br></pre></td></tr></table></figure>
+<h4 id="5-函数解构"><a href="#5-函数解构" class="headerlink" title="5.函数解构"></a>5.函数解构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function sum([x, y] = [1, 2])&#123;</span><br><span class="line">    return x + y</span><br><span class="line">&#125;</span><br><span class="line">sum()//3</span><br><span class="line">sum([2])//NaN</span><br><span class="line">sum([2, 3])//5(俩个都赋值，相加得5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.function sum(&#123;x, y&#125;=&#123;x:0, y:0&#125;, &#123;a=2, b=3&#125;)&#123;</span><br><span class="line">    return [x+a, y+b]</span><br><span class="line">&#125;</span><br><span class="line">sum(&#123;x:4, y:5&#125;, &#123;a:6&#125;) //(2) [10, 8]</span><br><span class="line">为什么是[10,8]</span><br><span class="line"></span><br><span class="line">2.function sum(&#123;x, y&#125;=&#123;x:0, y:0&#125;, &#123;a=2, b=3&#125;)&#123;</span><br><span class="line">    return [x+a, y+b]</span><br><span class="line">&#125;</span><br><span class="line">sum(&#123;x:4, y:5&#125;, &#123;a:6, b:7&#125;)</span><br><span class="line">(2) [10, 12]</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2019/1/31/168a40724f89842e?w=808&amp;h=421&amp;f=png&amp;s=69021" alt></p>
+<h4 id="这个需要注意一下"><a href="#这个需要注意一下" class="headerlink" title="这个需要注意一下"></a>这个需要注意一下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function sum([x=1, y=2])&#123;</span><br><span class="line">    return x+y</span><br><span class="line">&#125;</span><br><span class="line">sum() //报错</span><br><span class="line">sum([])//3 有[]里面，没有赋值所以用默认的</span><br><span class="line">想不报错这样写，要给xy赋值</span><br><span class="line">function sum([x, y] = [1, 2])&#123;</span><br><span class="line">    return x + y</span><br><span class="line">&#125;</span><br><span class="line">sum() //3(ES6)</span><br></pre></td></tr></table></figure>
+<h4 id="6-作用"><a href="#6-作用" class="headerlink" title="6.作用"></a>6.作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let [x, y] = [1, 2];(这个分好要写，不然浏览器会把它和下一句连一起。报错)</span><br><span class="line">[x, y] = [y, x] //赋的值反过来了</span><br><span class="line">x //2</span><br><span class="line">y // 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function ajax(&#123;url, type=&apos;GET&apos;&#125;)&#123;</span><br><span class="line">&#125;</span><br><span class="line">ajax(&#123;url: &apos;http://localhost:3000/getData&apos;&#125;)</span><br><span class="line">ajax的url是必须要填的，其他不赋值可以使用默认。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/03/简述HTTP原理/" rel="next" title="简述HTTP原理">
+                <i class="fa fa-chevron-left"></i> 简述HTTP原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">WineWang0000</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-var-可声明前置，let不可。"><span class="nav-number">1.</span> <span class="nav-text">1.var 可声明前置，let不可。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-let不可重复声明-var-可以"><span class="nav-number">2.</span> <span class="nav-text">2.let不可重复声明(var 可以)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-存在块级作用域"><span class="nav-number">3.</span> <span class="nav-text">3.存在块级作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-const-和let一样不可重复声明，不可声明前置及存在块级作用域。"><span class="nav-number">4.</span> <span class="nav-text">4.const 和let一样不可重复声明，不可声明前置及存在块级作用域。</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的解构"><span class="nav-number"></span> <span class="nav-text">数组的解构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数组解构"><span class="nav-number">1.</span> <span class="nav-text">1.数组解构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-默认值"><span class="nav-number">2.</span> <span class="nav-text">2.默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-对象的解构赋值"><span class="nav-number">3.</span> <span class="nav-text">3.对象的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-对象也有默认值，和上面的意思相同。"><span class="nav-number">4.</span> <span class="nav-text">4.对象也有默认值，和上面的意思相同。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数解构"><span class="nav-number">5.</span> <span class="nav-text">5.函数解构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这个需要注意一下"><span class="nav-number">6.</span> <span class="nav-text">这个需要注意一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-作用"><span class="nav-number">7.</span> <span class="nav-text">6.作用</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WineWang0000</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

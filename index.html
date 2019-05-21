@@ -229,6 +229,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/ES6-Var-Let-Const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/21/ES6-Var-Let-Const/" itemprop="url">ES6-Var-Let-Const</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T23:30:48+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-var-可声明前置，let不可。"><a href="#1-var-可声明前置，let不可。" class="headerlink" title="1.var 可声明前置，let不可。"></a>1.var 可声明前置，let不可。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a</span><br><span class="line">a = 3</span><br><span class="line">var a = 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = 3</span><br><span class="line">let a //报错</span><br></pre></td></tr></table></figure>
+<h4 id="2-let不可重复声明-var-可以"><a href="#2-let不可重复声明-var-可以" class="headerlink" title="2.let不可重复声明(var 可以)"></a>2.let不可重复声明(var 可以)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = 1</span><br><span class="line">let 2 = 2 //报错</span><br></pre></td></tr></table></figure>
+<h4 id="3-存在块级作用域"><a href="#3-存在块级作用域" class="headerlink" title="3.存在块级作用域"></a>3.存在块级作用域</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 4; i++)&#123;</span><br><span class="line">    console.log(i) // 0 1 2 3 只能在这个花括号内，外面作用域是没有i的。</span><br><span class="line">&#125;</span><br><span class="line">console.log(i) //报错：i is not defined</span><br></pre></td></tr></table></figure>
+<h4 id="4-const-和let一样不可重复声明，不可声明前置及存在块级作用域。"><a href="#4-const-和let一样不可重复声明，不可声明前置及存在块级作用域。" class="headerlink" title="4.const 和let一样不可重复声明，不可声明前置及存在块级作用域。"></a>4.const 和let一样不可重复声明，不可声明前置及存在块级作用域。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const a = 5</span><br><span class="line">a =  3 //报错</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;a:2&#125;</span><br><span class="line">obj.a = 3 //没问题。因为const指向的是一个对象，对象不变就可以，这里变的是对象里面的a。</span><br><span class="line">obj = &#123;a: 3&#125; //报错。因为把obj对象重新赋值了。</span><br></pre></td></tr></table></figure>
+<h2 id="数组的解构"><a href="#数组的解构" class="headerlink" title="数组的解构"></a>数组的解构</h2><h4 id="1-数组解构"><a href="#1-数组解构" class="headerlink" title="1.数组解构"></a>1.数组解构</h4><p>这样可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let [a, b ,c] = [1, 2, 3]</span><br><span class="line">console.log(a,b,c) //1 2 3</span><br></pre></td></tr></table></figure></p>
+<p>这样也可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let [a, [b], c] = [1, [2], 3]</span><br><span class="line">console.log([a, [b], c]) // Array(3)0: 21: [3]2: 4length: 3__proto__: Array(0)</span><br><span class="line">a //2</span><br><span class="line">b //3</span><br><span class="line">c //4</span><br></pre></td></tr></table></figure></p>
+<p>这样报错咯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a] = 1 //报错</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-默认值"><a href="#2-默认值" class="headerlink" title="2.默认值"></a>2.默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let [a, b=1] = [2]</span><br><span class="line">a // 2</span><br><span class="line">b // 1 </span><br><span class="line">这个a下标为0，后面的2给a，b没有（undefined）就用b默认的，所以是1.有就用设置的，没有设置就用默认的。</span><br><span class="line"></span><br><span class="line">let [a=1, b=2] = [3, 4]</span><br><span class="line">a // 3</span><br><span class="line">b // 4</span><br><span class="line">设置了就用设置的</span><br><span class="line"></span><br><span class="line">let [a=1, b=2] = [undefined, null]</span><br><span class="line">a // 1</span><br><span class="line">b // null</span><br><span class="line">a没有设置，所以用默认的1</span><br><span class="line">b其实是设置了，只不过是null。</span><br><span class="line"></span><br><span class="line">let [a=1, b=a] = [3]</span><br><span class="line">a // 3</span><br><span class="line">b // 3</span><br></pre></td></tr></table></figure>
+<h4 id="3-对象的解构赋值"><a href="#3-对象的解构赋值" class="headerlink" title="3.对象的解构赋值"></a>3.对象的解构赋值</h4><p>前置知识<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let p = [name, age] //等同于下面的写法(ES6)</span><br><span class="line">let p1 = &#123;name: name, age: age&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对象解构范例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let &#123;name: name ,age: age&#125; = &#123;name: &apos;Tom&apos;, age: 18&#125; //等于下面的</span><br><span class="line">let name</span><br><span class="line">let age</span><br><span class="line">(&#123;name: name, age: age&#125; = &#123;name: &apos;Tom&apos;, age: 18&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-对象也有默认值，和上面的意思相同。"><a href="#4-对象也有默认值，和上面的意思相同。" class="headerlink" title="4.对象也有默认值，和上面的意思相同。"></a>4.对象也有默认值，和上面的意思相同。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let &#123;x, y=5&#125; = &#123;x: 1&#125; //y是undefined，所以使用默认的y=5</span><br><span class="line">x //1</span><br><span class="line">y //5</span><br></pre></td></tr></table></figure>
+<h4 id="5-函数解构"><a href="#5-函数解构" class="headerlink" title="5.函数解构"></a>5.函数解构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function sum([x, y] = [1, 2])&#123;</span><br><span class="line">    return x + y</span><br><span class="line">&#125;</span><br><span class="line">sum()//3</span><br><span class="line">sum([2])//NaN</span><br><span class="line">sum([2, 3])//5(俩个都赋值，相加得5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.function sum(&#123;x, y&#125;=&#123;x:0, y:0&#125;, &#123;a=2, b=3&#125;)&#123;</span><br><span class="line">    return [x+a, y+b]</span><br><span class="line">&#125;</span><br><span class="line">sum(&#123;x:4, y:5&#125;, &#123;a:6&#125;) //(2) [10, 8]</span><br><span class="line">为什么是[10,8]</span><br><span class="line"></span><br><span class="line">2.function sum(&#123;x, y&#125;=&#123;x:0, y:0&#125;, &#123;a=2, b=3&#125;)&#123;</span><br><span class="line">    return [x+a, y+b]</span><br><span class="line">&#125;</span><br><span class="line">sum(&#123;x:4, y:5&#125;, &#123;a:6, b:7&#125;)</span><br><span class="line">(2) [10, 12]</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-gold-cdn.xitu.io/2019/1/31/168a40724f89842e?w=808&amp;h=421&amp;f=png&amp;s=69021" alt></p>
+<h4 id="这个需要注意一下"><a href="#这个需要注意一下" class="headerlink" title="这个需要注意一下"></a>这个需要注意一下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function sum([x=1, y=2])&#123;</span><br><span class="line">    return x+y</span><br><span class="line">&#125;</span><br><span class="line">sum() //报错</span><br><span class="line">sum([])//3 有[]里面，没有赋值所以用默认的</span><br><span class="line">想不报错这样写，要给xy赋值</span><br><span class="line">function sum([x, y] = [1, 2])&#123;</span><br><span class="line">    return x + y</span><br><span class="line">&#125;</span><br><span class="line">sum() //3(ES6)</span><br></pre></td></tr></table></figure>
+<h4 id="6-作用"><a href="#6-作用" class="headerlink" title="6.作用"></a>6.作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let [x, y] = [1, 2];(这个分好要写，不然浏览器会把它和下一句连一起。报错)</span><br><span class="line">[x, y] = [y, x] //赋的值反过来了</span><br><span class="line">x //2</span><br><span class="line">y // 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function ajax(&#123;url, type=&apos;GET&apos;&#125;)&#123;</span><br><span class="line">&#125;</span><br><span class="line">ajax(&#123;url: &apos;http://localhost:3000/getData&apos;&#125;)</span><br><span class="line">ajax的url是必须要填的，其他不赋值可以使用默认。</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/简述HTTP原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1426,182 +1563,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/JS运算符/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/09/JS运算符/" itemprop="url">JS运算符</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T22:33:24+08:00">
-                2019-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="JS运算符"><a href="#JS运算符" class="headerlink" title="JS运算符"></a>JS运算符</h1><h2 id="加法运算符"><a href="#加法运算符" class="headerlink" title="加法运算符"></a>加法运算符</h2><p>首先我们看几个例子，加减乘除的都比较容易理解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">var b = 2</span><br><span class="line">var ab = a + b</span><br><span class="line">console.log(ab) //3</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var c = &apos;F&apos;</span><br><span class="line">var d = 4</span><br><span class="line">var cd = c + d</span><br><span class="line">console.log(cd) //&quot;F4&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = &apos;3&apos;</span><br><span class="line">var b = &apos;hello&apos;</span><br><span class="line">undefined</span><br><span class="line">console.log(a+b) //&quot;3hello&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var w = &apos;5&apos;</span><br><span class="line">var c = 1</span><br><span class="line">console.log(w+c) //&quot;51&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JavaScript 允许非数值的相加。</span><br><span class="line">true + true // 2</span><br><span class="line">1 + true // 2 (出自阮一峰)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  toString: function () &#123;</span><br><span class="line">    return &apos;hello&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj + 2 // &quot;hello2&quot;</span><br><span class="line">对象obj的toString方法返回hello字符串，obj+2等于&quot;hello2&quot;</span><br></pre></td></tr></table></figure>
-<p>上面是从左到右的运算次序，字符串的位置不同会导致结果不同。</p>
-<p><strong>总结</strong>：1.都是数字，会做加法运算。2.两个都是字符串或一个是字符串，把另一个参数（2→字符2）然后做拼接。3.只有一个字符串会将其转成数字。4.只有一个数字参数时返回其整数值。5.在参数只有数字下回调用valueOf或者toString.</p>
-<h2 id="减运算符"><a href="#减运算符" class="headerlink" title="减运算符"></a>减运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 12</span><br><span class="line">var b = 2</span><br><span class="line">console.log(a - b) //10</span><br></pre></td></tr></table></figure>
-<h2 id="乘运算符"><a href="#乘运算符" class="headerlink" title="乘运算符"></a>乘运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 2</span><br><span class="line">var b = 2</span><br><span class="line">console.log(a * b) //4</span><br></pre></td></tr></table></figure>
-<h2 id="余数运算符（X-Y）"><a href="#余数运算符（X-Y）" class="headerlink" title="余数运算符（X % Y）"></a>余数运算符（X % Y）</h2><p>返回前一个运算子被后一个运算子除得到的余数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8 % 4 //没有余数</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 % 3 //1</span><br></pre></td></tr></table></figure>
-<p>注意：运算结果的正负取决于第一个运算子的正负值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-7 % 3 //-1</span><br><span class="line">7 % -3 //1</span><br></pre></td></tr></table></figure></p>
-<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p>X = Y,即把Y赋值给X，记住是后面的赋值个前面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var x = 3 </span><br><span class="line">var b = a</span><br><span class="line">b //3</span><br></pre></td></tr></table></figure></p>
-<p>其他的还有：<br>X += Y等同于X = X + Y<br>X -= Y等同于X = X - Y<br>X <em>= Y等同于X = X </em> Y<br>X /= Y等同于X = X / Y<br>X加上Y之后再赋值给X</p>
-<h2 id="比较运算符（true-or-false）"><a href="#比较运算符（true-or-false）" class="headerlink" title="比较运算符（true or false）"></a>比较运算符（true or false）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">== 相等</span><br><span class="line">=== 绝对相等，类型也要相等</span><br><span class="line">！= 不相等</span><br><span class="line">！== 严格不相等</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var m = 3</span><br><span class="line">var w = &apos;3&apos;</span><br><span class="line">m == w //true</span><br><span class="line">如果是三个等于号就为false，因为类型不想等。</span><br><span class="line">var m = 3</span><br><span class="line">var w = &apos;3&apos;</span><br><span class="line">m === w //false</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 7</span><br><span class="line">var b = &apos;7&apos;</span><br><span class="line">m !== w //true</span><br><span class="line">！即取反的意思，反过来结果就是true</span><br></pre></td></tr></table></figure>
-<h2 id="布尔运算符（true-or-false）"><a href="#布尔运算符（true-or-false）" class="headerlink" title="布尔运算符（true or false）"></a>布尔运算符（true or false）</h2><table>
-<thead>
-<tr>
-<th>符号表示</th>
-<th>名称</th>
-<th>返回值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>！</td>
-<td>取反</td>
-<td>true/false</td>
-</tr>
-<tr>
-<td>&amp;&amp;</td>
-<td>且运算符</td>
-<td>true/false</td>
-</tr>
-<tr>
-<td>ll</td>
-<td>或运算符</td>
-<td>true/false</td>
-</tr>
-</tbody>
-</table>
-<p>1.!取反<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!true //false</span><br><span class="line">true取反结果为false</span><br></pre></td></tr></table></figure></p>
-<p>2.且运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true &amp;&amp; false //false</span><br></pre></td></tr></table></figure></p>
-<p>先看第一项为true，再看第二项不为true，返回第二个结果false。如果两边都为true，则结果为true<br>3.或运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">true || false //false</span><br><span class="line">0 || 1 //1</span><br><span class="line">3 || 0 //3</span><br></pre></td></tr></table></figure></p>
-<p>有一个为true则为true,0转换成布尔是false，再看第二个1为true，返回第二个true的结果。第二个例子，3位true所以不用看第二个，返回true。</p>
-<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">condition? true case : false case</span><br></pre></td></tr></table></figure>
-<p>条件判断 如果第一个表达式的布尔值为true，则返回第二个表达式的值，否则返回第三个表达式的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;t&apos; ? &apos;hello&apos; : &apos;world&apos; // &quot;hello&quot;</span><br><span class="line">0 ? &apos;hello&apos; : &apos;world&apos; // &quot;world&quot;</span><br></pre></td></tr></table></figure></p>
-<p>t的值为true，所以返回hello。0是false，返回world。</p>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">二进制或运算符（or）：符号为|，表示若两个二进制位都为0，则结果为0，否则为1。</span><br><span class="line">二进制与运算符（and）：符号为&amp;，表示若两个二进制位都为1，则结果为1，否则为0。</span><br><span class="line">二进制否运算符（not）：符号为~，表示对一个二进制位取反。</span><br><span class="line">异或运算符（xor）：符号为^，表示若两个二进制位不相同，则结果为1，否则为0。</span><br><span class="line">左移运算符（left shift）：符号为&lt;&lt;</span><br><span class="line">右移运算符（right shift）：符号为&gt;&gt;</span><br><span class="line">带符号位的右移运算符（zero filled right shift）：符号为&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<p>参考一下大师的<a href="http://javascript.ruanyifeng.com/grammar/operator.html" target="_blank" rel="noopener">ruanyifeng</a></p>
-<h2 id="自增运算符（-e）（e-）"><a href="#自增运算符（-e）（e-）" class="headerlink" title="自增运算符（++e）（e++）"></a>自增运算符（++e）（e++）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e++ 自增前</span><br><span class="line">var e = 9 </span><br><span class="line">e++代表e = e + 1</span><br><span class="line">++e 自增后</span><br></pre></td></tr></table></figure>
-<p>看下面这两张图：<br><img src="https://i.loli.net/2019/04/10/5cae05eee902c.png" alt></p>
-<p><img src="https://i.loli.net/2019/04/10/5cae062d262c0.png" alt></p>
-<h2 id="自减运算符（–e）（e–）"><a href="#自减运算符（–e）（e–）" class="headerlink" title="自减运算符（–e）（e–）"></a>自减运算符（–e）（e–）</h2><p><img src="https://i.loli.net/2019/04/10/5cae07361bb9c.png" alt="_}TA1XWX$%D[)B$9O6]FNZ7.png"><br>和自增理解的方式一样，只是加减问题。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1652,7 +1613,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
