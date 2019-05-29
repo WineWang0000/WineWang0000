@@ -229,6 +229,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/我眼中的-曲奇饼-Cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/24/我眼中的-曲奇饼-Cookie/" itemprop="url">我眼中的-曲奇饼-Cookie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T17:27:22+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="首先我们来看一下Cookie的定义是啥么？"><a href="#首先我们来看一下Cookie的定义是啥么？" class="headerlink" title="首先我们来看一下Cookie的定义是啥么？"></a>首先我们来看一下Cookie的定义是啥么？</h2><p>Cookie：有时也用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 session 跟踪而储存在用户本地终端上的数据（通常经过加密）。定义于 RFC2109 和 2965 中的都已废弃，最新取代的规范是 RFC6265 [1] （可以叫做浏览器缓存） 。</p>
+<h3 id="好吧，说了一大堆，我没怎么听懂……让我来举个栗子"><a href="#好吧，说了一大堆，我没怎么听懂……让我来举个栗子" class="headerlink" title="好吧，说了一大堆，我没怎么听懂……让我来举个栗子"></a>好吧，说了一大堆，我没怎么听懂……让我来举个栗子</h3><p>比如你去电影院看电影，那张电影票就是Cookie，它是一个凭证，让你可以入场观看，没有电影票的当然不能入内，假如你途中出去上厕所，回来还是可以继续入内。但是Cookie是有有效期的，有效期长短不太一样，暂且不说。现在大概明白Cookie了吧！下面我们到实际中看一下。</p>
+<ul>
+<li>服务器通过Set-Cookie响应头设置Cookie</li>
+<li>浏览器得到Cookie后，每次请求时都带上Cookie，酱紫我才能认识你呀！</li>
+<li>服务器看到Cookie就阔以读取用户的信息，比如你登录的邮箱啦，密码啦，and so on…<h3 id="接下来结合图解释一下。"><a href="#接下来结合图解释一下。" class="headerlink" title="接下来结合图解释一下。"></a>接下来结合图解释一下。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(path === &apos;/quqibing&apos; &amp;&amp; method === &apos;POST&apos;)&#123;</span><br><span class="line">  response.setHeader(&apos;Set-Cookie&apos;, `sign_in-email=$&#123;email&#125;`)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>举例设置了Cookie为sign_in-email=${email}，打开开发者工具Network-sign—in文件。看它的响应头里面就会有服务器设置的Cookie。其他文件，比如我们访问a.js文件的时候，此文件也会带上这个Cookie。看图。（图是截的）</p>
+<p><img src="https://i.loli.net/2019/04/24/5cc0340a279ed.png" alt></p>
+<h2 id="Cookie的有效期"><a href="#Cookie的有效期" class="headerlink" title="Cookie的有效期"></a>Cookie的有效期</h2><p>默认是20分钟，我想起了登录某页面的时候，假如我输密码登录再退出，如果时间间隔不长，点进去是已登录的页面，时间久了就要重新输密码等。</p>
+<h3 id="Cookie能造假吗"><a href="#Cookie能造假吗" class="headerlink" title="Cookie能造假吗"></a>Cookie能造假吗</h3><p>可以，后端是可以修改的。就不多说了</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Array常用方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1569,139 +1700,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/CSS不正交/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/06/CSS不正交/" itemprop="url">CSS不正交</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T10:05:24+08:00">
-                2019-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS不正交"><a href="#CSS不正交" class="headerlink" title="CSS不正交"></a>CSS不正交</h2><p>为什么说css难学又好学呢，我觉得css也挺变态的。要想把css学好学透真难呐！下面说一下它“不正常”的地方。</p>
-<h3 id="1-border影响margin"><a href="#1-border影响margin" class="headerlink" title="1.border影响margin"></a>1.border影响margin</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line">&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>先看这段代码，一个one的margin为10px，俩个之间是不是应该有20px，但为什么还是10px，那是因为margin合并了。再看下面一段代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>看这个，是不是阻止margin合并，所以之间margin成了20px。让我们再看。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">CSS:</span><br><span class="line">.one&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 0.1px solid;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
-<p>0.1px约等于是不是0，但是也阻止margin合并，这又是为什么呢，算了，记住这个变态就行了。还有display: flex/border也能阻止margin合并.</p>
-<h3 id="2-小圆点-比如ul默认的点"><a href="#2-小圆点-比如ul默认的点" class="headerlink" title="2.小圆点(比如ul默认的点)"></a>2.小圆点(比如ul默认的点)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">ul &gt;li &#123;</span><br><span class="line">  display: inline; //block也能清除圆点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-position影响display"><a href="#3-position影响display" class="headerlink" title="3.position影响display"></a>3.position影响display</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=&quot;one&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;two&quot;&gt;two&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> .one&#123;</span><br><span class="line">  border: 1px solid blue;</span><br><span class="line">  height: 100px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  display: inline;</span><br><span class="line">  position: absolute;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里display样式是inline，但是打开后台(右击选检查能看到)就发现CSS已经改为block了，总结就是position能改变display-inline样式，目前发现只能改变inline，table，flex不会改变。不明白的时候最好自己试一下。或者死记硬背remember it。</p>
-<h3 id="4-父元素的transform影响fixed"><a href="#4-父元素的transform影响fixed" class="headerlink" title="4.父元素的transform影响fixed"></a>4.父元素的transform影响fixed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;two&quot;&gt;文字&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> </span><br><span class="line"> .one&#123;</span><br><span class="line">  background-color: red;</span><br><span class="line">  height: 100px;</span><br><span class="line">  position: relative;</span><br><span class="line">  transform: scale(0.9);</span><br><span class="line"> &#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  position: fixed;</span><br><span class="line">  border: 1px solid yellow;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="注释之后："><a href="#注释之后：" class="headerlink" title="注释之后："></a>注释之后：</h4><p><img src="https://i.loli.net/2019/03/06/5c7f47c95c3b5.png" alt></p>
-<h4 id="注释之前："><a href="#注释之前：" class="headerlink" title="注释之前："></a>注释之前：</h4><p><img src="https://i.loli.net/2019/03/06/5c7f480f4c21a.png" alt="SUGSBE`H%ESB~7{X~L{99MQ.png"></p>
-<p>会被父元素任何一个transform影响</p>
-<h3 id="5-folat影响inline"><a href="#5-folat影响inline" class="headerlink" title="5.folat影响inline"></a>5.folat影响inline</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;two&quot;&gt;文字&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;three&quot;&gt;文字&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">.one&#123;</span><br><span class="line">  background-color: red;</span><br><span class="line">  height: 100px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  background-color: black;</span><br><span class="line">  height: 50px;</span><br><span class="line">  width : 40px;</span><br><span class="line">  float: left;</span><br><span class="line">&#125;</span><br><span class="line">.three &#123;</span><br><span class="line">  background-color: yellow;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width : 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/03/06/5c7f443c1f729.png" alt><br>如图所示：黑色左浮，盖到黄色上面，影响到了黄色，按理说文字二字应在黑色下面，但事实却没有。原理我就不记了，记住这个“梗”</p>
-<h2 id="感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。"><a href="#感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。" class="headerlink" title="感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。"></a>感想：CSS确实够“变态”，这也是CSS不正交的地方，我觉得等你技术够牛x了，可以深入了解CSS，现在就先学着就行，没必要一直在CSS停留，固步不前。</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1752,7 +1750,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
