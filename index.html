@@ -229,6 +229,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/Vue-API-指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/31/Vue-API-指令/" itemprop="url">Vue-API-指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-31T22:23:43+08:00">
+                2019-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Vue是一个框架，能让逻辑更清楚，代码简单，这是我对Vue简单的理解。这里就是随便说一下，好歹有个开场白。</p>
+<h1 id="Vue指令"><a href="#Vue指令" class="headerlink" title="Vue指令"></a>Vue指令</h1><h3 id="vue-if"><a href="#vue-if" class="headerlink" title="vue-if"></a>vue-if</h3><p>用于条件性的渲染一段内容，如果有才xxx，没有则不处理。可和v-else合用，很有if…else…的意味。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-if=&quot;haveMoney&quot;&gt;买买买&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else&gt;哭唧唧&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>v-if可用在&lt;template&gt; 元素上，最终的渲染结果将不包含 &lt;template&gt; 元素。</p>
+<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><p>和v-if或者v-else-if一起使用。</p>
+<h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><p>2.1.0新增，可链式调用。<br>官例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=&quot;type === &apos;A&apos;&quot;&gt;</span><br><span class="line">  A</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &apos;B&apos;&quot;&gt;</span><br><span class="line">  B</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &apos;C&apos;&quot;&gt;</span><br><span class="line">  C</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;</span><br><span class="line">  Not A/B/C</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;item in items&quot;&gt;</span><br><span class="line">      &#123;&#123;item.name&#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">      el: &apos;#app&apos;,</span><br><span class="line">      data:&#123;</span><br><span class="line">        items:[</span><br><span class="line">          &#123;name: &apos;Tom&apos;,age: 18&#125;,</span><br><span class="line">          &#123;name: &apos;Tony&apos;,age: 20&#125;</span><br><span class="line">       ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>缩写：一个引号即可，动态的绑定属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 绑定一个属性 --&gt;</span><br><span class="line">&lt;img v-bind:src=&quot;imageSrc&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 动态特性名 (2.6.0+) --&gt;</span><br><span class="line">&lt;button v-bind:[key]=&quot;value&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;img :src=&quot;imageSrc&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 动态特性名缩写 (2.6.0+) --&gt;</span><br><span class="line">&lt;button :[key]=&quot;value&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 内联字符串拼接 --&gt;</span><br><span class="line">&lt;img :src=&quot;&apos;/path/to/images/&apos; + fileName&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- class 绑定 --&gt;</span><br><span class="line">&lt;div :class=&quot;&#123; red: isRed &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div :class=&quot;[classA, classB]&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div :class=&quot;[classA, &#123; classB: isB, classC: isC &#125;]&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- style 绑定 --&gt;</span><br><span class="line">&lt;div :style=&quot;&#123; fontSize: size + &apos;px&apos; &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div :style=&quot;[styleObjectA, styleObjectB]&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 绑定一个有属性的对象 --&gt;</span><br><span class="line">&lt;div v-bind=&quot;&#123; id: someProp, &apos;other-attr&apos;: otherProp &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过 prop 修饰符绑定 DOM 属性 --&gt;</span><br><span class="line">&lt;div v-bind:text-content.prop=&quot;text&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- prop 绑定。“prop”必须在 my-component 中声明。--&gt;</span><br><span class="line">&lt;my-component :prop=&quot;someThing&quot;&gt;&lt;/my-component&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过 $props 将父组件的 props 一起传给子组件 --&gt;</span><br><span class="line">&lt;child-component v-bind=&quot;$props&quot;&gt;&lt;/child-component&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- XLink --&gt;</span><br><span class="line">&lt;svg&gt;&lt;a :xlink:special=&quot;foo&quot;&gt;&lt;/a&gt;&lt;/svg&gt;</span><br></pre></td></tr></table></figure></p>
+<p>例子是Vue官方文档中的，写这么好，借鉴一下。啾咪。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/HTTP报文及几种请求方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1409,130 +1536,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/30/JS中的“继承”/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/30/JS中的“继承”/" itemprop="url">JS中的“继承”</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-30T08:54:46+08:00">
-                2019-04-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>为什么用双引号呢，其实js中的不叫继承，而是通过原型链来实现（继承）的，但是现在都潜移默化了，那就叫继承吧。</p>
-<h2 id="继承定义："><a href="#继承定义：" class="headerlink" title="继承定义："></a>继承定义：</h2><p>大概看一下，子类构造出来的对象，直接拥有父类对象的属性。什么意思呢，我们来看个例子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = new Array()</span><br><span class="line">a.valueOf()</span><br></pre></td></tr></table></figure></p>
-<p>其实每个构造函数都有一个prototype属性和<strong>proto</strong>，我们先看一下前者，你可以把prototype当做一个仓库，里面存放着对象的一些共有属性，比如valeOf等。<strong>proto</strong>你可以当做是通往prototype仓库的路，所以上例中a是Array的构造对象，Array是构造函数，那a的valueOf属性哪里来的，当然是从Array上得到的，那Array的又从哪里来的呢，答案是从Object上继承来的。a从Array身上得到不算继承，a从Object上得到valueOf才是继承。也就是说a.<strong>proto</strong>指向Array，Array的<strong>proto</strong>指向的是Object，Object指向谁呢，最终指向null，这样一个一个连起来就是原型链。看图。<br><img src="https://i.loli.net/2019/04/30/5cc7a890c9a9d.png" alt><br>还有一张图我觉得挺好的，放在这可以参考。<br><a href="blob:https://sm.ms/022e4357-fc33-48f3-90cc-dc550ff470aa" target="_blank" rel="noopener">点我查看(因为直接放图失败)</a></p>
-<h2 id="继承的ES5写法。"><a href="#继承的ES5写法。" class="headerlink" title="继承的ES5写法。"></a>继承的ES5写法。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function dad(name)&#123;</span><br><span class="line">  this.name = name</span><br><span class="line">&#125;</span><br><span class="line">dad.prototype.age = function()&#123;</span><br><span class="line">  return undefined</span><br><span class="line">&#125;</span><br><span class="line">function child(name)&#123;</span><br><span class="line">  dad.call(this, name) //注意这句</span><br><span class="line">&#125;</span><br><span class="line">var f = function()&#123;&#125;</span><br><span class="line">f.prototype= dad.prototype</span><br><span class="line">child.prototype = new f()</span><br><span class="line">这三句等于child.prototype.__proto__ = dad.prototype,因为IE不支持上句。</span><br><span class="line"></span><br><span class="line">child.prototype.fight = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>相当于dad这个函数在child函数中执行了一遍，并且将所有与 this 绑定的变量都切换到了child上。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1583,7 +1586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

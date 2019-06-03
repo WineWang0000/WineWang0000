@@ -229,6 +229,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/CSS为什么易学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WineWang0000">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/CSS为什么易学/" itemprop="url">CSS为什么易学</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T16:55:36+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="之前我们还说CSS变态，现在又说它易学是为啥么嘞？请听本回分解。"><a href="#之前我们还说CSS变态，现在又说它易学是为啥么嘞？请听本回分解。" class="headerlink" title="之前我们还说CSS变态，现在又说它易学是为啥么嘞？请听本回分解。"></a>之前我们还说CSS变态，现在又说它易学是为啥么嘞？请听本回分解。</h1><p>虽然CSS够变态，但是我们学会一些小套路，也能应对平时的需求。</p>
+<h2 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1.水平居中"></a>1.水平居中</h2><h4 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h4><p>在宽确定的情况下，margin-left: auto;,margin-right: auto;即可水平居中。宽不确定的情况下，margin-left：xpx;,margin-right: xpx;.x设置为你需要的，这样也能实现水平居中。</p>
+<h4 id="内联元素："><a href="#内联元素：" class="headerlink" title="内联元素："></a>内联元素：</h4><p>这个很简单，只需在父元素上text-align: center;即可。</p>
+<h2 id="2-垂直居中"><a href="#2-垂直居中" class="headerlink" title="2.垂直居中"></a>2.垂直居中</h2><p>只需要给padding-top: 20px;padding-bottom: 20px;设置同样的距离，自然就居中了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;two&quot;&gt;文字&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">.one&#123;</span><br><span class="line">  background-color: red;</span><br><span class="line">  padding-top: 20px;</span><br><span class="line">  padding-bottom: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <img src="https://i.loli.net/2019/03/06/5c7f7a394fe1b.png" alt></p>
+<h2 id="3-绝对居中"><a href="#3-绝对居中" class="headerlink" title="3.绝对居中"></a>3.绝对居中</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div class=&quot;one&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.one&#123;</span><br><span class="line">   background-color: red;</span><br><span class="line">   height: 50px;</span><br><span class="line">   width: 120px;</span><br><span class="line">   display: flex;</span><br><span class="line">   justify-content: center;</span><br><span class="line">   align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.two &#123;</span><br><span class="line">  border: 1px solid yellow;</span><br><span class="line">  height: 20px;</span><br><span class="line">  width: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 三件套：display: flex; justify-content: center; align-items: center;</p>
+<h2 id="4-布局"><a href="#4-布局" class="headerlink" title="4.布局"></a>4.布局</h2><p>一般记住float和flex布局就行，在重复一遍，不要忘记去除浮动。</p>
+<h2 id="5-下图怎么实现"><a href="#5-下图怎么实现" class="headerlink" title="5.下图怎么实现"></a>5.下图怎么实现</h2><p><img src="https://i.loli.net/2019/03/06/5c7f7c92ec925.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;span&gt;香蕉&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;我爱香蕉&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> span &#123;</span><br><span class="line">   border: 1px solid red;</span><br><span class="line">   display: block;</span><br><span class="line">   text-align: justify; //齐行改变单词间的间隔</span><br><span class="line">   line-height: 30px;</span><br><span class="line">   overflow: hidden;</span><br><span class="line">   height: 40px;</span><br><span class="line">   width: 5em;</span><br><span class="line"> &#125;</span><br><span class="line"> span:after &#123;</span><br><span class="line">   content: &apos;&apos;;</span><br><span class="line">   display: inline-block;</span><br><span class="line">   width: 100%;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-文字溢出"><a href="#6-文字溢出" class="headerlink" title="6.文字溢出"></a>6.文字溢出</h2><h4 id="单行文本溢出："><a href="#单行文本溢出：" class="headerlink" title="单行文本溢出："></a>单行文本溢出：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;son&quot;&gt;</span><br><span class="line">   文本内容文本内容文本内容文本内容文本内容文本内容</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.son&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="多行文本溢出："><a href="#多行文本溢出：" class="headerlink" title="多行文本溢出："></a>多行文本溢出：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;par&quot;&gt;</span><br><span class="line">   文本内容文本内容文本内容文本内容文本内容文本内容</span><br><span class="line">   文本内容文本内容文本内容文本内容文本内容文本内容</span><br><span class="line">   文本内容文本内容文本内容文本内容文本内容文本内容</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.par &#123;</span><br><span class="line">   border: 1px solid orange;</span><br><span class="line">   overflow : hidden;</span><br><span class="line">   text-overflow: ellipsis;</span><br><span class="line">   display: -webkit-box;</span><br><span class="line">   -webkit-line-clamp: 2;</span><br><span class="line">   -webkit-box-orient: vertical;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/03/06/5c7f7ec4c07ed.png" alt="H`9M0%%N5UYM5%V%Y1V4KTJ.png"></p>
+<p>如图：溢出内容用…显示(单行多行我是放在一张图片上展示的)这个就记住没有什么技巧。</p>
+<h2 id="8-内联元素宽高"><a href="#8-内联元素宽高" class="headerlink" title="8.内联元素宽高"></a>8.内联元素宽高</h2><p>padding和margin影响宽，不影响高（高度可加行高line-heigt）</p>
+<h2 id="9-怎么实现1-1的div"><a href="#9-怎么实现1-1的div" class="headerlink" title="9.怎么实现1:1的div"></a>9.怎么实现1:1的div</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.one &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大概这么多，以后想到遇到再补充。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/CSS不正交/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1433,171 +1570,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/Node-js-Server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WineWang0000">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/19/Node-js-Server/" itemprop="url">Node.js-Server</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-19T20:03:48+08:00">
-                2019-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>HTTP的底层是由TCP和IP协议构成的</p>
-<h2 id="TCP传输协议控制-Transmission-Control-Protocol"><a href="#TCP传输协议控制-Transmission-Control-Protocol" class="headerlink" title="TCP传输协议控制(Transmission Control Protocol)"></a>TCP传输协议控制(Transmission Control Protocol)</h2><p>面试的时候最多问两个问题，看博客了解一下即可。</p>
-<ul>
-<li><p>TCP和UDP的区别？</p>
-<p>简答：TCP 可靠、面向连接、相对 UDP 较慢；UDP 不可靠，不面向连接、相对 TCP 较快。</p>
-</li>
-<li>TCP 的三次握手指的是什么<br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：<ol>
-<li>客户端：我要连接你了，可以吗</li>
-<li>服务端：嗯，我准备好了，连接我吧</li>
-<li>客户端：那我连接你咯。</li>
-<li>开始后面步骤<h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2>有一些琐碎的知识点:</li>
-</ol>
-</li>
-</ul>
-<p>1.IP分为内网外网，中间人是路由器，你的设备，像电脑手机和路由器过程的是内网。如果想连接外网是需要路由器中转的。</p>
-<p>2.访问127.0.0.1是访问自己(设备)</p>
-<p>3.内网IP格式：192.168.xx.xx</p>
-<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>访问设备只有IP是不行的，还需要有端口，端口是什么，其实只是一个编号。</p>
-<h3 id="一个端口只对应一个服务"><a href="#一个端口只对应一个服务" class="headerlink" title="一个端口只对应一个服务"></a>一个端口只对应一个服务</h3><p>1.要提供 HTTP 服务你最好使用 80 端口</p>
-<p>2.要提供 HTTPS 服务你最好使用 443 端口</p>
-<p>3.要提供 FTP 服务你最好使用 21 端口</p>
-<ul>
-<li><p>不知道用什么端口号可以<a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a></p>
-</li>
-<li><p>一共有多少端口号：65535 0~1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</p>
-</li>
-</ul>
-<h1 id="用server接收请求"><a href="#用server接收请求" class="headerlink" title="用server接收请求"></a>用server接收请求</h1><p>简述步骤：</p>
-<ul>
-<li>cd ~/Desktop</li>
-<li>mkdir node-demo</li>
-<li>cd node-demo</li>
-<li>touch server.js</li>
-<li>编辑server.js （<a href="https://github.com/pingdeng123/note-server/blob/master/server.js" target="_blank" rel="noopener">编辑内容在此</a>）运行 node server.js;</li>
-</ul>
-<p>(里面内容是大神写的，只是借来写个笔记，三扣)</p>
-<h1 id="用server发送响应"><a href="#用server发送响应" class="headerlink" title="用server发送响应"></a>用server发送响应</h1><ul>
-<li>成功之后新开个bash窗口</li>
-<li>编辑sever.js</li>
-<li><p>在标注的地方添加代码<br>response.write(‘hi’)和response.end()</p>
-</li>
-<li><p>中断之前的 server，重新运行 node server 8888</p>
-</li>
-<li><a href="http://127.0.0.1:8888/xxx" target="_blank" rel="noopener">http://127.0.0.1:8888/xxx</a> 打开这个网页就会看到hi</li>
-</ul>
-<p>那两行代码根据英文意思大概也能知道，第一个是写入hi，第二个是结束。和可以加上这些response.statusCode = 200 意思是状态码，200代表成功 response.setHeader(‘Content-Type’, ‘text/html;charset=utf-8’) 这个意思是把得到的内容转成html格式，utf-8就是GBK，这个在之前博客有写。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1648,7 +1620,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
